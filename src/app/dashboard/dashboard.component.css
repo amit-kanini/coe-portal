@@ -43,7 +43,7 @@ h2{
      height: 100%;
     }
     .hello:hover {
-     /* transform: translate(.05rem, .05rem); */
+     transform: translate(.0rem, .2rem);
      border: 2px solid #2d67f6;
      transition: all 0.3s ease-in-out;
      color:#2d67f6;
