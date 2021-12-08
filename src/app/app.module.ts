@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -20,14 +22,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    //HttpClientModule,
+    HttpClientModule,
     NoopAnimationsModule,
     NgbModule,
   ],
