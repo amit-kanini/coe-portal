@@ -11,6 +11,7 @@ import { LoginServService } from '../Services/login.service';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router,private obj: LoginServService) { }
+  
 password:string='';
 phone:string='';
 
@@ -31,7 +32,14 @@ customer : ICustomer = {
 //   }
 
 // }
+  
   ngOnInit(): void {
+    this.logout();
+  }
+
+  logout():void{
+  localStorage.clear();
+  this.router.navigate(['/']);
   }
 
   getid_loginapi(tempPhone:string, tempPass:string ):void
