@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IAcceleretors } from '../Models/IAccelerators';
+import { DashboardService } from '../Services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  accelerators: IAcceleretors[] = [];
+  constructor(private router: Router,private obj:DashboardService) { }
 
   ngOnInit(): void {
+    this.obj.getAccelerators().subscribe((data)=>this.accelerators=data);
   if(localStorage.length==0){
         var temp=localStorage.length;
         console.log(temp)

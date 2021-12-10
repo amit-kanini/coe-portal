@@ -7,12 +7,12 @@
 </h2>
 <h3>Engineering Solutions for Better Customer Experiences</h3>
 <div class="container-fluid row row-cols-1 row-cols-md-4 g-4" style="margin-top: 0px;">
-    <div class="col">
+    <div class="col" *ngFor='let acc of accelerators' >
       <div class="card h-100 hello">
-        <a class="hello2" target="_blank" href="https://www.youtube.com/watch?v=aapva2u930c&t=1s">
-          <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top hello1" alt="..." />
+        <a class="hello2" target="_blank" [attr.href]='acc.accVideo'>
+          <img [src]='acc.accImg' class="card-img-top hello1" alt="..." />
           <div class="overlay">
-            <a target="_blank" href="https://www.youtube.com/watch?v=aapva2u930c&t=1s" class="icon" title="Play">
+            <a target="_blank" [attr.href]='acc.accVideo' class="icon" title="Play">
               <!-- <i class="fa fa-play"></i> -->
               <!-- <i class="fas fa-play-circle"></i> -->
               <i class="fas fa-play"></i>
@@ -20,15 +20,14 @@
           </div>
         </a>
         <div class="card-body">
-          <h5 class="card-title" style="font-weight: bold; font-size: 23px;">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <h5 class="card-title" style="font-weight: bold; font-size: 23px;">{{acc.accName}}</h5>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">C</h6> -->
           <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
+            {{acc.accDescr}}
           </p>
           <div style="margin: 5px; margin-left: 0px;">
-            <a style="font-weight: bold;color: black; font-size: 14px;" target="_blank" href="assets/pdfs/KANINI_NDA_New.pdf" class="card-link hi">Documentation</a>
-            <a style="font-weight: bold; color: black;font-size: 14px;" target="_blank" href="https://www.google.com" class="card-link">Try it out</a>
+            <a style="font-weight: bold;color: black; font-size: 14px;" target="_blank" [attr.href]='acc.accDoc' class="card-link hi">Documentation</a>
+            <a style="font-weight: bold; color: black;font-size: 14px;" target="_blank"  [attr.href]='acc.accUrl' class="card-link">Try it out</a>
             <!-- <a  style="margin-top: 10px;" href="#!" class="btn btn-primary">Try it Out</a> -->
           </div>
         </div>
@@ -39,7 +38,7 @@
       </div>
     </div>
 
-    <div class="col">
+    <!-- <div class="col">
       <div class="card h-100 hello">
         <a class="hello2" target="_blank" href="https://www.youtube.com/watch?v=aapva2u930c&t=1s">
           <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top hello1" alt="..." />
@@ -62,7 +61,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 </div>
 
