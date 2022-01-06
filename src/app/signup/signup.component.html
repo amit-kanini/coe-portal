@@ -1,3 +1,5 @@
+<!-- <p>signup works!</p> -->
+
 <app-header></app-header>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -13,17 +15,21 @@
       <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-user-interface-kiranshastry-lineal-kiranshastry.png" id="icon" alt="User Icon" />
     </div>
     <!-- Login Form -->
-    <form (ngSubmit)="getid_loginapi(phone, password)">      
-      <input type="text" id="login" class="fadeIn second" placeholder="login" name="tempPhone" [(ngModel)]="phone" maxlength="10"  required>
+    <!-- <form (ngSubmit)="getid_loginapi(phone, password)">       -->
+        <!-- Un comment line 18 and use ng submit and respective api call function -->
+        <form>
+      <input type="text" id="login" class="fadeIn second" placeholder="Name" name="name" [(ngModel)]="name" maxlength="50"  required>
+      <input type="text" id="login" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="email" maxlength="50"  required>
+      <input type="text" id="login" class="fadeIn second" placeholder="Phone" name="phone" [(ngModel)]="phone" maxlength="50"  required>
       <!-- <input [type=password] id="password" class="fadeIn third" placeholder="password" name="pass" [(ngModel)]="password"   required> -->
       <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" name="pass" [(ngModel)]="password" >
+
       <!-- <button type="submit" class="fadeIn fourth">Log In</button> -->
-       <input type="submit" class="fadeIn fourth" value="Log In"> 
+       <input type="submit" class="fadeIn fourth" value="Register"> 
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" routerLink="/signup">New User? Sign Up</a>
+      <a class="underlineHover" routerLink="/">Already have account? Sign in</a>
     </div>
   </div>
 </div>
