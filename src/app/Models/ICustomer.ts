@@ -6,5 +6,8 @@ export interface ICustomer
     phoneNumber: string;
     email: string;
     password: string;
-    verifiedFlag: boolean;
+    isAdmin: boolean;
+    status:string;
+    logTime:string;
+    loginCounter:number;
 }

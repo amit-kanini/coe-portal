@@ -11,14 +11,15 @@ import { DashboardService } from '../Services/dashboard.service';
 export class DashboardComponent implements OnInit {
   accelerators: IAcceleretors[] = [];
   constructor(private router: Router,private obj:DashboardService) { }
-
+  userid:string|null=null;
   ngOnInit(): void {
     this.obj.getAccelerators().subscribe((data)=>this.accelerators=data);
-  if(localStorage.length==0){
-        var temp=localStorage.length;
-        console.log(temp)
-        this.router.navigate(['/']);
-      }
+
+    this.userid=localStorage.getItem("userid");
+    if(this.userid==null)
+    {
+      this.router.navigate(['/']);
+    }
   }
 
 }
