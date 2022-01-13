@@ -48,7 +48,8 @@ customer : ICustomer = {
       {
         this.customer = data;
         localStorage.setItem("custmid", String(this.customer.customerId));
-         console.log(this.customer);
+        localStorage.setItem("userStat", String(this.customer.firstName));
+        console.log(this.customer);
 
         this.router.navigate(['/dashboard']);
 

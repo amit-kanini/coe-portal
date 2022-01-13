@@ -12,13 +12,26 @@ export class DashboardComponent implements OnInit {
   accelerators: IAcceleretors[] = [];
   constructor(private router: Router,private obj:DashboardService) { }
 
+  UserStatus:string='';
+  checkUser:boolean=false;
+  checkAdmin:boolean=false;
+  
   ngOnInit(): void {
     this.obj.getAccelerators().subscribe((data)=>this.accelerators=data);
-  if(localStorage.length==0){
-        var temp=localStorage.length;
-        console.log(temp)
-        this.router.navigate(['/']);
-      }
+    if(localStorage.length==0){
+          var temp=localStorage.length;
+          console.log(temp)
+          this.router.navigate(['/']);
+        }
+
+    this.UserStatus= localStorage.userStat;
+
+    if(this.UserStatus=='admin'){
+      this.checkAdmin=true;
+    }
+    else{
+      this.checkUser=true;
+    }
   }
 
 }

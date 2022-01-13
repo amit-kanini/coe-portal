@@ -1,0 +1,39 @@
+<app-header></app-header>
+<link href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet" />
+
+<h2>Our Services<span style="color: #2d67f6;">.</span>
+  Your Pathfinders<span style="color: #2d67f6;">.</span>
+</h2>
+<h3>Engineering Solutions for Better Customer Experiences</h3>
+<div class="container-fluid row row-cols-1 row-cols-md-4 g-4" style="margin-top: 0px;">
+    <div class="col" *ngFor='let acc of accelerators' >
+      <div class="card h-100 hello">
+        <a class="hello2" target="_blank" [attr.href]='acc.accVideo'>
+          <img [src]='acc.accImg' class="card-img-top hello1" alt="..." />
+          <div class="overlay">
+            <a target="_blank" [attr.href]='acc.accVideo' class="icon" title="Play">
+              <i class="fas fa-play"></i>
+            </a>  
+          </div>
+        </a>
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold; font-size: 23px;">{{acc.accName}}</h5>
+          <p class="card-text">
+            {{acc.accDescr}}
+          </p>
+          <div style="margin: 5px; margin-left: 0px;">
+            <a style="font-weight: bold;color: black; font-size: 14px;" target="_blank" [attr.href]='acc.accDoc' class="card-link hi">Documentation</a>
+            <a style="font-weight: bold; color: black;font-size: 14px;" target="_blank"  [attr.href]='acc.accUrl' class="card-link">Try it out</a>
+            <br/>
+            <a style="font-weight: bold; color: black;font-size: 14px;" [routerLink]="['/updatedetail']" class="card-link">Update</a>
+            <a style="font-weight: bold; color: black;font-size: 14px;" [routerLink]="['/coreteam']" class="card-link">Core Team</a>
+            <a style="font-weight: bold; color: black;font-size: 14px;" [routerLink]="['/productowner']" class="card-link">Product Owner</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>
