@@ -4,7 +4,10 @@
 <nav class="sticky-top" style="z-index:1; background-color:white;">
 <div class="container "  >
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <a *ngIf='validUser' [routerLink]="['/dashboard']" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="https://kanini.com/wp-content/uploads/2020/07/Kanini-Logo.svg" class="bi me-2" width="150" height="45">
+      </a>
+      <a *ngIf='!validUser' href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="https://kanini.com/wp-content/uploads/2020/07/Kanini-Logo.svg" class="bi me-2" width="150" height="45">
       </a>
 <!-- <div *ngIf='!validUser'> <ul class="nav nav-pills">

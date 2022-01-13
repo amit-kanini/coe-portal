@@ -14,6 +14,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './logout/logout.component';
 import { SignupComponent } from './signup/signup.component';
+import { ManageacceleratorsComponent } from './manageaccelerators/manageaccelerators.component';
+import { ProductownerComponent } from './productowner/productowner.component';
+import { CoreteamComponent } from './coreteam/coreteam.component';
+import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
 
 
@@ -25,7 +29,11 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     DashboardComponent,
     LogoutComponent,
-    SignupComponent
+    SignupComponent,
+    ManageacceleratorsComponent,
+    ProductownerComponent,
+    CoreteamComponent,
+    UpdatedetailsComponent
   ],
   imports: [
     BrowserModule,
