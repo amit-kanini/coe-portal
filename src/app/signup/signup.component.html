@@ -15,17 +15,63 @@
       <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-user-interface-kiranshastry-lineal-kiranshastry.png" id="icon" alt="User Icon" />
     </div>
     <!-- Login Form -->
-    <!-- <form (ngSubmit)="getid_loginapi(phone, password)">       -->
-        <!-- Un comment line 18 and use ng submit and respective api call function -->
-        <form>
-      <input type="text" id="login" class="fadeIn second" placeholder="Name" name="name" [(ngModel)]="name" maxlength="50"  required>
-      <input type="text" id="login" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="email" maxlength="50"  required>
-      <input type="text" id="login" class="fadeIn second" placeholder="Phone" name="phone" [(ngModel)]="phone" maxlength="50"  required>
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+
+          <input type="text" 
+            id="login" 
+            class="fadeIn second" 
+            placeholder="First Name" 
+            name="firstName" 
+            ngModel
+              name="firstName">
+
+          <input type="text" 
+            id="login" 
+            class="fadeIn second" 
+            placeholder="Last Name" 
+            name="lastName" 
+            ngModel
+              name="lastName" 
+              maxlength="50">
+          
+          <input 
+            type="text" 
+            id="login" 
+            class="fadeIn second" 
+            placeholder="Phone"
+            name="phone" 
+            ngModel
+              name="phone" 
+              maxlength="50"  
+              required>
+
+          <input 
+            type="text"
+            id="login" 
+            class="fadeIn second" 
+            placeholder="Email" 
+            name="email"
+            ngModel
+              name="email" 
+              maxlength="50">
+
+          <input
+            type="text" 
+            id="login" 
+            class="fadeIn second" 
+            placeholder="Password" 
+            name="password"
+            ngModel
+              name="password"
+              required
+              minlength="6"
+              required>
+        
       <!-- <input [type=password] id="password" class="fadeIn third" placeholder="password" name="pass" [(ngModel)]="password"   required> -->
       <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
 
       <!-- <button type="submit" class="fadeIn fourth">Log In</button> -->
-       <input type="submit" class="fadeIn fourth" value="Register"> 
+       <input  type="submit" class="fadeIn fourth" > 
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">

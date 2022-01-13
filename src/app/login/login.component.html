@@ -14,7 +14,7 @@
     </div>
     <!-- Login Form -->
     <form (ngSubmit)="getid_loginapi(phone, password)">      
-      <input type="text" id="login" class="fadeIn second" placeholder="login" name="tempPhone" [(ngModel)]="phone" maxlength="10"  required>
+      <input type="text" id="login" class="fadeIn second" placeholder="login" name="tempPhone" [(ngModel)]="phone" maxlength="100"  required>
       <!-- <input [type=password] id="password" class="fadeIn third" placeholder="password" name="pass" [(ngModel)]="password"   required> -->
       <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" name="pass" [(ngModel)]="password" >
