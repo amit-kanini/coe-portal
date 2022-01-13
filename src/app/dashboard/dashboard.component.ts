@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
  userid:string|null=null;
   UserStatus:string|null='';
-  checkUser:boolean=false;
+  checkUser:boolean=false; //
   checkAdmin:boolean=false;
   
   ngOnInit(): void {
