@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router,private obj:DashboardService) { }
 
  userid:string|null=null;
-  UserStatus:string='';
+  UserStatus:string|null='';
   checkUser:boolean=false;
   checkAdmin:boolean=false;
   
@@ -25,9 +25,9 @@ export class DashboardComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
-    this.UserStatus= localStorage.userStat;
-
-    if(this.UserStatus=='admin'){
+    this.UserStatus= localStorage.getItem("userStat");
+    console.log(this.UserStatus);
+    if(this.UserStatus=='true'){
       this.checkAdmin=true;
     }
     else{
