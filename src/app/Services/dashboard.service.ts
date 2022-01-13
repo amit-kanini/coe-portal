@@ -8,7 +8,7 @@ import { IAcceleretors } from "../Models/IAccelerators";
 @Injectable({ providedIn:'root' }) 
  
 export class DashboardService{ 
-     private dashUrl = 'https://localhost:44360/api/Dashboard/GetAllAccelerators';
+     private dashUrl = 'https://localhost:7119/api/Dashboard/GetAllAccelerators';
 
      constructor(private http: HttpClient) { }
      

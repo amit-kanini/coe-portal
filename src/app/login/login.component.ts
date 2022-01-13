@@ -22,37 +22,44 @@ customer : ICustomer = {
     phoneNumber: "",
     email:"",
     password: "",
-    verifiedFlag:false,
+    isAdmin:false,
+    status:"",
+    logTime:"",
+    loginCounter:0
 } 
-// login(tempPhone:string,pass:string){
-//   console.log(this.phone);
-//   console.log(this.password);
-//   if(this.phone=='1234567890'|| this.password=='asdf'){
-//     this.router.navigate(['/dashboard']);
-//   }
-
-// }
-  
+status=false;
+invalidlogin=false;
+userid:string|null=null;
   ngOnInit(): void {
-    this.logout();
-  }
-
-  logout():void{
-  localStorage.clear();
-  this.router.navigate(['/']);
+    this.userid=localStorage.getItem("userid");
+    if(this.userid!=null)
+    {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   getid_loginapi(tempPhone:string, tempPass:string ):void
   {
     this.obj.loginMethod(tempPhone, tempPass).subscribe(data=>
       {
+        this.invalidlogin=false;
         this.customer = data;
-        localStorage.setItem("custmid", String(this.customer.customerId));
-        localStorage.setItem("userStat", String(this.customer.firstName));
-        console.log(this.customer);
+         console.log(this.customer);
+         if(this.customer.status=="Approved")
+         {
+          localStorage.setItem("username",data.firstName+" "+data.lastName);
+          localStorage.setItem("userid",data.customerId.toString());
+          this.router.navigate(['/dashboard']);
+         }
+         else if(this.customer.status=="Pending")
+         {
+           this.status=true;
+           window.scroll(0,0);
+         }
 
-        this.router.navigate(['/dashboard']);
-
+      },err=>
+      {
+        this.invalidlogin=true;
       })
   }
 

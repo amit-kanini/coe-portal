@@ -7,78 +7,75 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="wrapper fadeInDown">
+  <div class="error text-danger" *ngIf="status">
+    <h1>Already exist Please Login or Contact Admin!!</h1>
+  </div>
+  <br>
+  <br>
   <div id="formContent">
-    <!-- Tabs Titles -->
+    
+    <br>
 
-    <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-user-interface-kiranshastry-lineal-kiranshastry.png" id="icon" alt="User Icon" />
+      <img src="assets/images/user.png" id="icon" alt="User Icon" />
     </div>
-    <!-- Login Form -->
-        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <br>
 
-          <input type="text" 
-            id="login" 
-            class="fadeIn second" 
-            placeholder="First Name" 
-            name="firstName" 
-            ngModel
-              name="firstName">
-
-          <input type="text" 
-            id="login" 
-            class="fadeIn second" 
-            placeholder="Last Name" 
-            name="lastName" 
-            ngModel
-              name="lastName" 
-              maxlength="50">
+        <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
           
-          <input 
-            type="text" 
-            id="login" 
-            class="fadeIn second" 
-            placeholder="Phone"
-            name="phone" 
-            ngModel
-              name="phone" 
-              maxlength="50"  
-              required>
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> FirstName</label>
+          </div>
+          <input type="text" id="firstName" class="fadeIn second" placeholder="FirstName" name="firstName" [(ngModel)]="customer.firstName" maxlength="100"  required>
+          <br>
+          <br>
 
-          <input 
-            type="text"
-            id="login" 
-            class="fadeIn second" 
-            placeholder="Email" 
-            name="email"
-            ngModel
-              name="email" 
-              maxlength="50">
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> LastName</label>
+          </div>
+          <input type="text" id="lastName" class="fadeIn second" placeholder="LastName" name="lastName" [(ngModel)]="customer.lastName" maxlength="100"  required>
+          <br>
+          <br>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/phone.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> PhoneNumber</label>
+          </div>
+          <input type="text" id="phoneNumber" #phone="ngModel" class="fadeIn second" placeholder="PhoneNumber" pattern="[789][0-9]{9}" name="phoneNumber" [(ngModel)]="customer.phoneNumber" maxlength="100"  required>
+          <div class="error text-danger" *ngIf="phone.errors?.pattern || phone.touched && phone.invalid">Enter Valid Phone Number</div>
+          <br>
+          <br>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/mail.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Email</label>
+          </div>
+          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="customer.email" maxlength="100"  required>
+          <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
+          <br>
+          <br>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Password</label>
+          </div>
+          <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn second" placeholder="Passowrd" name="password" [(ngModel)]="customer.password" maxlength="100"  required>
+          <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
+          <br>
+          <br>
 
-          <input
-            type="text" 
-            id="login" 
-            class="fadeIn second" 
-            placeholder="Password" 
-            name="password"
-            ngModel
-              name="password"
-              required
-              minlength="6"
-              required>
-        
-      <!-- <input [type=password] id="password" class="fadeIn third" placeholder="password" name="pass" [(ngModel)]="password"   required> -->
-      <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
-
-      <!-- <button type="submit" class="fadeIn fourth">Log In</button> -->
-       <input  type="submit" class="fadeIn fourth" > 
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/re-password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Re-Password</label>
+          </div>
+          <input type="password" id="re-password" #repass="ngModel"  class="fadeIn second" placeholder="Re-Password" name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
+          <div class="error text-danger" *ngIf="repass.errors?.pattern || repass.touched && repass.invalid">Incorrect Password</div>
+          <br>
+          <br> 
+          <input  type="submit" class="fadeIn fourth" > 
     </form>
-    <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" routerLink="/">Already have account? Sign in</a>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
-
-
-<app-footer></app-footer>

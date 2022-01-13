@@ -5,27 +5,56 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="wrapper fadeInDown">
+  <div class="error text-success" *ngIf="status">
+     <h1><span> <img src="assets/images/loading.png"  class="d-inline-block align-top" height="50" width="50" alt="Loading Icon" /></span> Status Pending</h1>
+  </div>
+  <br>
+  <br>
   <div id="formContent">
     <!-- Tabs Titles -->
-
+    <br>
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-user-interface-kiranshastry-lineal-kiranshastry.png" id="icon" alt="User Icon" />
+      <img src="assets/images/user.png" id="icon" alt="User Icon" />
     </div>
+    <br>
     <!-- Login Form -->
+
     <form (ngSubmit)="getid_loginapi(phone, password)">      
-      <input type="text" id="login" class="fadeIn second" placeholder="login" name="tempPhone" [(ngModel)]="phone" maxlength="100"  required>
-      <!-- <input [type=password] id="password" class="fadeIn third" placeholder="password" name="pass" [(ngModel)]="password"   required> -->
-      <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" name="pass" [(ngModel)]="password" >
-      <!-- <button type="submit" class="fadeIn fourth">Log In</button> -->
+      
+      <div class="text-left" style="padding-left: 2em;">
+        <label class="h5"><span><img src="assets/images/mail.png" width="20" height="20" class="d-inline-block align-top" alt=""> </span> Mail</label>
+      </div>
+      <input type="text" id="login" #mail="ngModel" class="fadeIn second" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" name="tempEmail" [(ngModel)]="phone" maxlength="100"  required>
+      <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
+      <br>
+      <br>
+
+      <div class="text-left" style="padding-left: 2em;">
+        <label class="h5"><span><img src="assets/images/password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Password</label>
+      </div>
+      <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn third" name="login" placeholder="Password" name="pass" [(ngModel)]="password" >
+      <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
+      <br>
+
+      <div class="error text-danger" *ngIf="invalidlogin">
+        Invalid User name or Password 
+      </div>
+      <br>
+      <br>
+
        <input type="submit" class="fadeIn fourth" value="Log In"> 
     </form>
-    <!-- Remind Passowrd -->
+
     <div id="formFooter">
       <a class="underlineHover" routerLink="/signup">New User? Sign Up</a>
     </div>
+    
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 
 
