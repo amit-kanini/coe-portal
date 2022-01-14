@@ -39,7 +39,7 @@ userid:string|null=null;
   }
 
   getid_loginapi(tempPhone:string, tempPass:string ):void
-  {
+  {  console.log("hhjv");
     this.obj.loginMethod(tempPhone, tempPass).subscribe(data=>
       {
         this.invalidlogin=false;
