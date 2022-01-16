@@ -20,7 +20,7 @@
     <br>
     <!-- Login Form -->
 
-    <form (ngSubmit)="getid_loginapi(phone, password)">      
+    <form (ngSubmit)="getid_loginapi(phone, password)" ngNativeValidate>      
       
       <div class="text-left" style="padding-left: 2em;">
         <label class="h5"><span><img src="assets/images/mail.png" width="20" height="20" class="d-inline-block align-top" alt=""> </span> Mail</label>
@@ -43,7 +43,16 @@
       <br>
       <br>
 
-       <input type="submit" class="fadeIn fourth" value="Log In"> 
+      <ng-container *ngIf="loading;else normal">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </ng-container>
+      <ng-template #normal>
+        <button disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
+      </ng-template>
+
     </form>
 
     <div id="formFooter">
