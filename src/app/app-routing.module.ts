@@ -9,6 +9,11 @@ import { ManageacceleratorsComponent } from './manageaccelerators/manageaccelera
 import { ProductownerComponent } from './productowner/productowner.component';
 import { CoreteamComponent } from './coreteam/coreteam.component';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { ApproverequestComponent } from './approverequest/approverequest.component';
+import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
 
 
 const routes: Routes = [
@@ -20,6 +25,11 @@ const routes: Routes = [
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},
   {path:'updatedetail', component : UpdatedetailsComponent},
+  {path:'manageuser', component : ManageuserComponent},
+  {path:'edituser/:id', component : EdituserComponent},
+  {path:'deleteuser/:id', component : DeleteuserComponent},
+  {path:'approveuser', component : ApproverequestComponent},
+  {path:'rejectuser', component : RejectrequestComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
