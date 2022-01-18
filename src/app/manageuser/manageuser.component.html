@@ -40,7 +40,7 @@
                 <td *ngIf="acc.status === 'Approved'"><button  [routerLink]="['/edituser',acc.customerId]" >Edit</button></td> 
                 <td *ngIf="acc.status === 'Approved'"><button  [routerLink]="['/deleteuser',acc.customerId]" >Delete</button></td>
                 <td *ngIf="acc.status !== 'Approved'"><button  [routerLink]="['/approveuser',acc.customerId]" >Approve</button></td> 
-                <td *ngIf="acc.status !== 'Approved'"  ><button [routerLink]="['/rejectuser',acc.customerId])" >Reject</button></td>
+                <td *ngIf="acc.status !== 'Approved'"  ><button [routerLink]="['/rejectuser',acc.customerId]" >Reject</button></td>
               </tr>
             </table>
             

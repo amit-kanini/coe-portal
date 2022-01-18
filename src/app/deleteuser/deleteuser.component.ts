@@ -48,8 +48,9 @@ msg: string='';
     this.obj.deleteUser(id).subscribe(data=>
       {
         this.msg="Deleted";
+        this.router.navigate(['/manageuser']);
         alert(this.msg);
       });
-      this.router.navigate(['/manageuser']);
+      
   }
 }

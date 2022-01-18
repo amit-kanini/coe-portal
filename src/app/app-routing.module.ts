@@ -28,8 +28,8 @@ const routes: Routes = [
   {path:'manageuser', component : ManageuserComponent},
   {path:'edituser/:id', component : EdituserComponent},
   {path:'deleteuser/:id', component : DeleteuserComponent},
-  {path:'approveuser', component : ApproverequestComponent},
-  {path:'rejectuser', component : RejectrequestComponent},
+  {path:'approveuser/:id', component : ApproverequestComponent},
+  {path:'rejectuser/:id', component : RejectrequestComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

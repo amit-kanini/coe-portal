@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IAcceleretors } from '../Models/IAccelerators';
 import { ICustomer } from '../Models/ICustomer';
+import { DashboardService } from '../Services/dashboard.service';
 import { UserService } from '../Services/user.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { UserService } from '../Services/user.service';
 })
 export class EdituserComponent implements OnInit {
 
-  constructor(private router: Router,private route:ActivatedRoute, private obj: UserService) { }
+  constructor(private router: Router,private route:ActivatedRoute, private obj: UserService,private obj1:DashboardService) { }
 user:ICustomer={
   customerId:0,
   firstName:"",
@@ -25,10 +27,13 @@ user:ICustomer={
 
 
 }
+accelerators: IAcceleretors[] = [];
   ngOnInit(): void {
     //const cart_id=Number(this.route.snapshot.paramMap.get('cartId'));
     const cart_id=Number(this.route.snapshot.paramMap.get('id'));
     this.getUserById(cart_id);
+    this.obj1.getAccelerators().subscribe((data)=>this.accelerators=data);
+    console.log(this.accelerators);
   }
   getUserById(id:number):void
   {

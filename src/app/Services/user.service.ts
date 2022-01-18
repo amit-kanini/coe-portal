@@ -3,7 +3,12 @@ import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs"; 
 import {catchError,tap} from 'rxjs/operators'; 
 import { IAcceleretors } from "../Models/IAccelerators";
-import { ICustomer } from "../Models/ICustomer";
+ import { ICustomer } from "../Models/ICustomer";
+// import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http"; 
+// import { Injectable } from "@angular/core"; 
+// import { Observable, throwError } from "rxjs"; 
+// import {catchError,tap} from 'rxjs/operators'; 
+// import { ICustomer } from "../Models/ICustomer";
 
 
 @Injectable({ providedIn:'root' }) 
@@ -38,27 +43,42 @@ export class UserService{
      putUser(user:ICustomer):Observable<any>
      {
         {
-            return this.http.put<ICustomer>(this.dashUrl2,user,{
-              headers:new HttpHeaders(
-                {
-                  'Content-Type':'application/json;charset=UTF-8',
-                  'Access-Control-Allow-Origin':'*',
-                  'Access-Control-Allow-Method':'*'
-                }
-                )
-              })
-            }
+            return this.http.put(this.dashUrl2,user,{
+                headers: new HttpHeaders({
+                    'Content-Type':'application/json;charset=UTF-8',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Method':'*',    
+                    'Accept': 'text/html, application/xhtml+xml, */*'
+              }),responseType:'text'}
+              )
         }
+   }
     
 
     deleteUser(id:number):Observable<any>
     {
-     return this.http.delete<any>(this.dashUrl1+"DeleteUser"+"?custid="+id,{
-        headers:new HttpHeaders({
-          'Content-Type':'application/json;charset=UTF-8',
-          'Access-Control-Allow-Origin':'*',
-          'Access-Control-Allow-Method':'*'
-        })
-      });
-    }
+     return this.http.delete(this.dashUrl1+"DeleteUser"+"?custid="+id,{
+        headers: new HttpHeaders({
+            'Content-Type':'application/json;charset=UTF-8',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Method':'*',    
+            'Accept': 'text/html, application/xhtml+xml, */*'
+      }),responseType:'text'}
+      )
+}
+
+approveUser(id:number):Observable<any>
+{
+   {
+       return this.http.post(this.dashUrl1+"Approval"+"?custid="+id,{
+           headers: new HttpHeaders({
+               'Content-Type':'application/json;charset=UTF-8',
+               'Access-Control-Allow-Origin':'*',
+               'Access-Control-Allow-Method':'*',    
+               'Accept': 'text/html, application/xhtml+xml, */*'
+         }),responseType:'text'}
+         )
+   }
+}
+
 }
