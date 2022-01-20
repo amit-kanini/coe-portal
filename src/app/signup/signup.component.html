@@ -67,8 +67,21 @@
           <input type="password" id="re-password" #repass="ngModel"  class="fadeIn second" placeholder="Re-Password" name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
           <div class="error text-danger" *ngIf="repass.errors?.pattern || repass.touched && repass.invalid">Incorrect Password</div>
           <br>
+          <br>
+          <div class="error text-danger" *ngIf="invalidlogin">
+            Invalid Request!!
+          </div>
+          <br>
           <br> 
-          <input  type="submit" class="fadeIn fourth" > 
+          <ng-container *ngIf="loading;else normal">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+          </ng-container>
+          <ng-template #normal>
+            <button disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </ng-template> 
     </form>
     <div id="formFooter">
       <a class="underlineHover" routerLink="/">Already have account? Sign in</a>

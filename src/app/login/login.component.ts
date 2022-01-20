@@ -29,6 +29,7 @@ customer : ICustomer = {
 } 
 status=false;
 invalidlogin=false;
+loading=true;
 userid:string|null=null;
   ngOnInit(): void {
     this.userid=localStorage.getItem("userid");
@@ -38,9 +39,10 @@ userid:string|null=null;
     }
   }
 
-  getid_loginapi(tempPhone:string, tempPass:string ):void
+  getid_loginapi(tempEmail:string, tempPass:string ):void
   {
-    this.obj.loginMethod(tempPhone, tempPass).subscribe(data=>
+    this.loading=false;
+    this.obj.loginMethod(tempEmail, tempPass).subscribe(data=>
       {
         this.invalidlogin=false;
         this.customer = data;
@@ -54,12 +56,14 @@ userid:string|null=null;
          }
          else if(this.customer.status=="Pending")
          {
+          this.loading=true;
            this.status=true;
            window.scroll(0,0);
          }
 
       },err=>
       {
+        this.loading=true;
         this.invalidlogin=true;
       })
   }
