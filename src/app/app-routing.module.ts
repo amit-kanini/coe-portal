@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},
-  {path:'updatedetail', component : UpdatedetailsComponent},
+  {path:'updatedetail/:id', component : UpdatedetailsComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
