@@ -10,6 +10,7 @@ import { UserService } from '../Services/user.service';
 })
 export class ManageuserComponent implements OnInit {
 users:ICustomer[]=[];
+non_admin_users:ICustomer[]=[];
 filteredusers:ICustomer[]=[];
   
   private _listFilter: string = '';
@@ -23,8 +24,8 @@ set listFilter(value: string) {
 }
 performFilter(filterBy: string): ICustomer[] {
  filterBy = filterBy.toLocaleLowerCase();
-  return this.users.filter((users: ICustomer) =>
-  users.status .toLocaleLowerCase().includes(filterBy));
+  return this.non_admin_users.filter((non_admin_users: ICustomer) =>
+  non_admin_users.status.toLocaleLowerCase().includes(filterBy));
 
 }
 constructor(private router: Router,private obj:UserService) { }
@@ -32,15 +33,17 @@ constructor(private router: Router,private obj:UserService) { }
 
     this.obj.getUsers().subscribe({
       next:users=>{
-        this.users=users;
-      this.filteredusers = this.users;
+        for(let i of users)
+        {
+          if(i.isAdmin==false)
+          {
+            this.non_admin_users.push(i)
+          }
+        }
+        this.non_admin_users=this.non_admin_users;
+      this.filteredusers = this.non_admin_users;
       },
     }); 
-}
-  cartAdd():void{
-   // this.obj1.CartAdd(this.cartdetails).subscribe(data=>{
-    //  this.router.navigate(['/cart']);
-   // })
 }
 
 }

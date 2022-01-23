@@ -65,20 +65,16 @@ export class UserService{
             'Accept': 'text/html, application/xhtml+xml, */*'
       }),responseType:'text'}
       )
-}
-
+    }
 approveUser(id:number):Observable<any>
 {
-   {
-       return this.http.post(this.dashUrl1+"Approval"+"?custid="+id,{
-           headers: new HttpHeaders({
-               'Content-Type':'application/json;charset=UTF-8',
-               'Access-Control-Allow-Origin':'*',
-               'Access-Control-Allow-Method':'*',    
-               'Accept': 'text/html, application/xhtml+xml, */*'
-         }),responseType:'text'}
-         )
-   }
+  return this.http.post(this.dashUrl1+"Approval"+"?custid="+id,null,{
+    headers: new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*',    
+        'Accept': 'text/html, application/xhtml+xml, */*'
+  }),responseType:'text'}
+  )
 }
-
 }

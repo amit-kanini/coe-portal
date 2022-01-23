@@ -44,7 +44,8 @@
           </p>
           <div style="margin: 5px; margin-left: 0px;">
             <a style="font-weight: bold;color: black; font-size: 14px;" target="_blank" [attr.href]='acc.accDoc' class="card-link hi">Documentation</a>
-            <a style="font-weight: bold; color: black;font-size: 14px;" target="_blank"  [attr.href]='acc.accUrl' class="card-link">Try it out</a>
+            <a *ngIf="UserStatus=='false'" style="font-weight: bold; color: black;font-size: 14px;"  href="javascript:void(0);" class="card-link">Try it out</a>
+            <a *ngIf="UserStatus=='true'" style="font-weight: bold; color: black;font-size: 14px;" target="_blank"  [attr.href]='acc.accUrl' class="card-link">Try it out</a>
           </div>
         </div>
       </div>
