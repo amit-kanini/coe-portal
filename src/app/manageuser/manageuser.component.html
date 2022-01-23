@@ -1,0 +1,46 @@
+ <app-header></app-header> 
+<link href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet" />
+<!-- 
+<h2>Our Services<span style="color: #2d67f6;">.</span>
+  Your Pathfinders<span style="color: #2d67f6;">.</span>
+</h2>
+<h3>Engineering Solutions for Better Customer Experiences</h3> -->
+
+
+    
+          <div class='row'>
+            <div class='col-md-2'>Filter by Status:</div>
+            <div class='col-md-4'>
+              <select [(ngModel)]='listFilter'>
+                <option value="Approved">Approved</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+          </div>
+        
+ 
+<div  style="margin-top: 10px;">
+  <table id="customers">
+    <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Status</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor='let acc of filteredusers' >
+                <td>{{ acc.firstName }} {{ acc.lastName }}</td>
+                <td>{{acc.email}}</td>
+                <td>{{acc.status}}</td>
+                <td *ngIf="acc.status === 'Approved'"><button type="button" class="btn btn-success" [routerLink]="['/edituser',acc.customerId]" >Edit</button></td> 
+                <td *ngIf="acc.status === 'Approved'"><button type="button" class="btn btn-danger" [routerLink]="['/deleteuser',acc.customerId]" >Delete</button></td>
+                <td *ngIf="acc.status !== 'Approved'"><button type="button" class="btn btn-success" [routerLink]="['/approveuser',acc.customerId]" >Approve</button></td> 
+                <td *ngIf="acc.status !== 'Approved'"  ><button type="button" class="btn btn-danger"[routerLink]="['/rejectuser',acc.customerId]" >Reject</button></td>
+    </tr>
+  </table>
+            
+ </div>
+     
+     
+
+

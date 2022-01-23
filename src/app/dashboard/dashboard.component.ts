@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   
   ngOnInit(): void {
     this.obj.getAccelerators().subscribe((data)=>this.accelerators=data);
+    console.log(this.accelerators);
     this.userid=localStorage.getItem("userid");
     if(this.userid==null)
     {

@@ -18,6 +18,11 @@ import { ManageacceleratorsComponent } from './manageaccelerators/manageaccelera
 import { ProductownerComponent } from './productowner/productowner.component';
 import { CoreteamComponent } from './coreteam/coreteam.component';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { ApproverequestComponent } from './approverequest/approverequest.component';
+import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
 
 
 
@@ -33,7 +38,12 @@ import { UpdatedetailsComponent } from './updatedetails/updatedetails.component'
     ManageacceleratorsComponent,
     ProductownerComponent,
     CoreteamComponent,
-    UpdatedetailsComponent
+    UpdatedetailsComponent,
+    ManageuserComponent,
+    EdituserComponent,
+    DeleteuserComponent,
+    ApproverequestComponent,
+    RejectrequestComponent,
   ],
   imports: [
     BrowserModule,

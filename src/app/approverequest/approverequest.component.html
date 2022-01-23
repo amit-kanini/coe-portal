@@ -1,14 +1,12 @@
-<!-- <p>signup works!</p> -->
 
 <app-header></app-header>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <div class="wrapper fadeInDown">
   <div class="error text-danger" *ngIf="status">
-    <h1>Already exist Please Login or Contact Admin!!</h1>
+    <h1>Error In Updating the Database</h1>
   </div>
   <br>
   <br>
@@ -21,26 +19,26 @@
     </div>
     <br>
 
-        <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
+        <form #Form="ngForm" (ngSubmit)="approveUser(user.customerId)" ngNativeValidate>
           
           <div class="text-left" style="padding-left: 2em;">
             <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> FirstName</label>
           </div>
-          <input type="text" id="firstName" class="fadeIn second" placeholder="FirstName" name="firstName" [(ngModel)]="customer.firstName" maxlength="100"  required>
+          <input type="text" id="firstName" class="fadeIn second" placeholder="FirstName" name="firstName" [(ngModel)]="user.firstName" maxlength="100"  required disabled>
           <br>
           <br>
 
           <div class="text-left" style="padding-left: 2em;">
             <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> LastName</label>
           </div>
-          <input type="text" id="lastName" class="fadeIn second" placeholder="LastName" name="lastName" [(ngModel)]="customer.lastName" maxlength="100"  required>
+          <input type="text" id="lastName" class="fadeIn second" placeholder="LastName" name="lastName" [(ngModel)]="user.lastName" maxlength="100"  required disabled>
           <br>
           <br>
           
           <div class="text-left" style="padding-left: 2em;">
             <label class="h5"><span><img src="assets/images/phone.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> PhoneNumber</label>
           </div>
-          <input type="text" id="phoneNumber" #phone="ngModel" class="fadeIn second" placeholder="PhoneNumber" pattern="[789][0-9]{9}" name="phoneNumber" [(ngModel)]="customer.phoneNumber" maxlength="100"  required>
+          <input type="text" id="phoneNumber" #phone="ngModel" class="fadeIn second" placeholder="PhoneNumber" pattern="[789][0-9]{9}" name="phoneNumber" [(ngModel)]="user.phoneNumber" maxlength="100"  required disabled>
           <div class="error text-danger" *ngIf="phone.errors?.pattern || phone.touched && phone.invalid">Enter Valid Phone Number</div>
           <br>
           <br>
@@ -48,33 +46,26 @@
           <div class="text-left" style="padding-left: 2em;">
             <label class="h5"><span><img src="assets/images/mail.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Email</label>
           </div>
-          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="customer.email" maxlength="100"  required>
+          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="user.email" maxlength="100"  required disabled>
           <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
-          <br>
-          <br>
-          
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Password</label>
-          </div>
-          <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn second" placeholder="Passowrd" name="password" [(ngModel)]="customer.password" maxlength="100"  required>
-          <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
           <br>
           <br>
 
           <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/re-password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Re-Password</label>
+            <label class="h5"><span><img src="assets/images/status.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Status</label>
           </div>
-          <input type="password" id="re-password" #repass="ngModel"  class="fadeIn second" placeholder="Re-Password" name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
-          <div class="error text-danger" *ngIf="repass.errors?.pattern || repass.touched && repass.invalid">Incorrect Password</div>
+          <input type="text" id="firstName" class="fadeIn second" placeholder="Status" name="status" [(ngModel)]="user.status" maxlength="100"  required disabled>
           <br>
           <br>
+          
+
           <div class="error text-danger" *ngIf="invalidlogin">
             Invalid Request!!
           </div>
           <br>
           <br> 
           <ng-container *ngIf="loading;else normal">
-            <input type="submit" class="fadeIn fourth" value="Sign up">
+            <input type="submit" class="fadeIn fourth" value="Approve">
           </ng-container>
           <ng-template #normal>
             <button disabled>
@@ -83,12 +74,6 @@
             </button>
           </ng-template> 
     </form>
-    <div id="formFooter">
-      <a class="underlineHover" routerLink="/">Already have account? Sign in</a>
-    </div>
-  </div>
-  <br>
-  <br>
   <br>
   <br>
 </div>

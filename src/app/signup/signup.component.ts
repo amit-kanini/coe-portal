@@ -29,16 +29,21 @@ export class SignupComponent implements OnInit {
   }
   password=""
   status=false;
+  loading=true;
+  invalidlogin=false;
 
   onSubmit(form:ICustomer):void
   {
+    this.loading=false;
     form.status=""
     console.log(form)
     this.service.signup(form).subscribe(
       data=>
       {
+        this.invalidlogin=false;
         if(data=="Already exists change your phone number or email")
         {
+          this.loading=true;
           this.status=true;
           window.scroll(0,0);
         }
@@ -47,6 +52,10 @@ export class SignupComponent implements OnInit {
           alert(data);
           this.router.navigate(['/'])
         }
+      },err=>
+      {
+        this.loading=true;
+        this.invalidlogin=true;
       }
     )
   }
