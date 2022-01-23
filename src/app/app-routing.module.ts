@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},
-  {path:'updatedetail', component : UpdatedetailsComponent},
+  {path:'updatedetail/:id', component : UpdatedetailsComponent},
   {path:'manageuser', component : ManageuserComponent},
   {path:'edituser/:id', component : EdituserComponent},
   {path:'deleteuser/:id', component : DeleteuserComponent},
