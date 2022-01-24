@@ -44,45 +44,14 @@
           </p>
         </div>
         <ul class="list-group list-group-flush" style="border: 1px solid white;">
-          <li class="list-group-item"><a style="color: black;text-decoration: none;" target="_blank" [attr.href]='acc.accUrl'><span class="hi">Try it out</span></a></li>
+          <li *ngIf="userInterest.indexOf(acc.accId)!=-1||UserStatus=='true'" class="list-group-item"><a style="color: black;text-decoration: none;" target="_blank" [attr.href]='acc.accUrl'><span class="hi">Try it out</span></a></li>
+          <li *ngIf="userInterest.indexOf(acc.accId)==-1" class="list-group-item"><a style="color: black;text-decoration: none;" href='javascript:void(0);'><span class="hi">Try it out</span></a></li>
           <li class="list-group-item"><a style="color: black;text-decoration: none;" target="_blank" [attr.href]='acc.accDoc'><span class="hi">Documentation</span></a></li>
         </ul>
       </div>
     </div>
   </ng-container>
     
-    
-    <!-- <div class="col" *ngFor='let acc of accelerators' >
-      <div class="card h-100 hello">
-        <a class="hello2" target="_blank" [attr.href]='acc.accVideo'>
-          <img [src]='acc.accImg' class="card-img-top hello1" alt="..." />
-          <div class="overlay">
-            <a target="_blank" [attr.href]='acc.accVideo' class="icon" title="Play">
-              <i class="fa fa-play"></i>
-              <i class="fas fa-play-circle"></i>
-              <i class="fas fa-play"></i>
-            </a>  
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title" style="font-weight: bold; font-size: 23px;">{{acc.accName}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">C</h6>
-          <p class="card-text">
-            {{acc.accDescr}}
-          </p>
-          <div style="margin: 5px; margin-left: 0px;">
-            <a style="font-weight: bold;color: black; font-size: 14px;" target="_blank" [attr.href]='acc.accDoc' class="card-link hi">Documentation</a>
-            <a style="font-weight: bold; color: black;font-size: 14px;" target="_blank"  [attr.href]='acc.accUrl' class="card-link">Try it out</a>
-            <a  style="margin-top: 10px;" href="#!" class="btn btn-primary">Try it Out</a>
-          </div>
-        </div>
-
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-      </div>
-    </div> -->
-
 </div>
 
 <app-footer></app-footer>

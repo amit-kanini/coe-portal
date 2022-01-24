@@ -77,4 +77,14 @@ approveUser(id:number):Observable<any>
   }),responseType:'text'}
   )
 }
+getUserInterest(id:number):Observable<any>
+{
+  return this.http.get(this.dashUrl1+"GetUserInterest?custid="+id,{
+    headers:new HttpHeaders({
+      'Content-Type':'application/json;charset=UTF-8',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Method':'*'
+    })
+  })
+}
 }

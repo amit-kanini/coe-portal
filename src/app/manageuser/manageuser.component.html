@@ -12,6 +12,7 @@
             <div class='col-md-2'>Filter by Status:</div>
             <div class='col-md-4'>
               <select [(ngModel)]='listFilter'>
+                <option value="">All</option>
                 <option value="Approved">Approved</option>
                 <option value="Pending">Pending</option>
               </select>
@@ -26,6 +27,7 @@
       <td>Email</td>
       <td>Status</td>
       <td>Edit</td>
+      <td>Accelerators</td>
       <td>Delete</td>
     </tr>
     <tr *ngFor='let acc of filteredusers' >
@@ -33,8 +35,10 @@
                 <td>{{acc.email}}</td>
                 <td>{{acc.status}}</td>
                 <td *ngIf="acc.status === 'Approved'"><button type="button" class="btn btn-success" [routerLink]="['/edituser',acc.customerId]" >Edit</button></td> 
+                <td *ngIf="acc.status === 'Approved'"><button type="button" class="btn btn-info" [routerLink]="['/acceleratorinterest',acc.customerId]" >AddUserChoice</button></td>
                 <td *ngIf="acc.status === 'Approved'"><button type="button" class="btn btn-danger" [routerLink]="['/deleteuser',acc.customerId]" >Delete</button></td>
-                <td *ngIf="acc.status !== 'Approved'"><button type="button" class="btn btn-success" [routerLink]="['/approveuser',acc.customerId]" >Approve</button></td> 
+                <td *ngIf="acc.status !== 'Approved'"><button type="button" class="btn btn-success" [routerLink]="['/approveuser',acc.customerId]" >Approve</button></td>
+                <td *ngIf="acc.status !== 'Approved'"><button type="button" class="btn btn-info" disabled>AddUserChoice</button></td> 
                 <td *ngIf="acc.status !== 'Approved'"  ><button type="button" class="btn btn-danger"[routerLink]="['/rejectuser',acc.customerId]" >Reject</button></td>
     </tr>
   </table>

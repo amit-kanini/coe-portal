@@ -50,11 +50,13 @@
           <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
           <br>
           <br>
+          
           <div class="error text-danger" *ngIf="invalidlogin">
             Invalid Request!!
           </div>
           <br>
           <br> 
+
           <ng-container *ngIf="loading;else normal">
             <input type="submit" class="fadeIn fourth" value="Update">
           </ng-container>
