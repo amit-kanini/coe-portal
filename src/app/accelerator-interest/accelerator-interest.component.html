@@ -19,17 +19,22 @@
     </div>
     <br>
 
-        <form #Form="ngForm" (ngSubmit)="postInterest()" ngNativeValidate>
+        <form #Form="ngForm" (ngSubmit)="postInterest(acceleratorsChoice)" ngNativeValidate>
           
           <div class="text-left" style="padding-left: 2em;">
             <label class="h5"><span><img src="assets/images/accelerator.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Accelerators: </label>
           </div>
           <br>
-          <div *ngFor='let acc of accelerators'>
-            {{acc.accName}} <select name="acc.accName">
-                <option *ngIf="userInterest.indexOf(acc.accId)!=-1" selected value="{acc.accId}">Yes</option>
-                <option value="">No</option>
-                <option *ngIf="userInterest.indexOf(acc.accId)==-1" value="{acc.accId}">Yes</option>
+          <span *ngIf="userInterest.length==0" class="text-danger">No Previous Selections</span>
+          <br>
+          <span class="text-success">Prefer your New Selection</span>
+          <br>
+          <br>
+          <div *ngFor='let acc of acceleratorsChoice'>
+             {{acc.accName}}<span *ngIf="userInterest.indexOf(acc.accId)!=-1" class="text-success"> *Previous Selection </span> <select [(ngModel)]="acc.userInterest" name="acc.accName">
+              <option [ngValue]=0 >Select</option>  
+              <option [ngValue]="acc.accId">Interested</option>
+                <option [ngValue]=0 >No</option>
               </select>
               <br>
               <br>

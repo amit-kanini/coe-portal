@@ -87,4 +87,15 @@ getUserInterest(id:number):Observable<any>
     })
   })
 }
+addUserInterest(list:Number[],id:Number):Observable<any>
+{
+  return this.http.post(this.dashUrl1+"AddUserInterest?custid="+id,list,{
+    headers:new HttpHeaders({
+      'Content-Type':'application/json;charset=UTF-8',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Method':'*',
+      'Accept': 'text/html, application/xhtml+xml, */*'
+    }),responseType:'text'
+  })
+}
 }
