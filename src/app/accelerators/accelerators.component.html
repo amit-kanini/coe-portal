@@ -1,0 +1,14 @@
+<div class="container">
+<div class="card" style="width: 19rem;" *ngFor='let acc of accelerators'>
+    <div class="card-horizontal" >
+        <div class="img-square-wrapper">
+            <img src='{{acc.accImg}}' width="130px" height="170px" alt="Card image cap">
+        </div>
+        <div class="card-body" style="font-size: 10px;">
+            <h4 class="card-title textlimit" style="font-size: 15px; color: #12355B;line-height: 28px;font-weight: 700;">{{acc.accName}}</h4>
+            <p class="card-text textlimit">{{acc.accDescr}}</p>
+            <a routerLink="/main/dashboardDetail" (click)="button(acc.accName)" href="" style="color: #1076BD; font-weight: 400;"><u>View Details</u></a>
+        </div>
+    </div>
+</div>
+</div>

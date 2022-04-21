@@ -1,0 +1,20 @@
+<mat-drawer-container class="example-container mat-typography" autosize>
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true" style="background: #EEF9FD;">
+    <mat-nav-list>
+      <mat-list-item>
+        <img src="assets/images/Loan.png" width="30px" height="30px" id="icon" alt="User Icon" />
+        <span><h4 style="font-size: 18px; color: #1076BD; font-weight: 700;" mat-line *ngIf="isExpanded">&nbsp;&nbsp;Loan Accelerator</h4></span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>assignment</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">ML 360</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="background-color: white; padding-right: 20px;">
+    <img src="assets/images/arrow.png" width="20px" height="20px" id="icon" alt="User Icon" />
+  </button>
+  <div class="example-sidenav-content" style="height: 700px;">
+    In Progress
+  </div>
+</mat-drawer-container>
