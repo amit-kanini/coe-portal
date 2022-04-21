@@ -17,10 +17,11 @@ import { RejectrequestComponent } from './rejectrequest/rejectrequest.component'
 
 
 const routes: Routes = [
-  {path:'', component : LoginComponent},
+  // {path:'', component : LoginComponent},
+  {path:'', component : SignupComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'logout', component : LogoutComponent},
-  {path:'signup', component : SignupComponent},
+  // {path:'signup', component : SignupComponent},
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},

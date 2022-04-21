@@ -1,81 +1,49 @@
 <!-- <p>signup works!</p> -->
 
-<app-header></app-header>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
-<div class="wrapper fadeInDown">
+<div >
+<div class="wrapper">
+  <img src="../../assets/images/Screenshot (27).png" width="800" height="600" align="left">
   <div class="error text-danger" *ngIf="status">
     <h1>Already exist Please Login or Contact Admin!!</h1>
   </div>
-  <br>
-  <br>
-  <div id="formContent">
-    
-    <br>
 
-    <div class="fadeIn first">
-      <img src="assets/images/user.png" id="icon" alt="User Icon" />
-    </div>
-    <br>
-
-        <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
-          
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> FirstName</label>
+  <div class="box">
+    <form  #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
+      <div>
+        <h3 >COE</h3>
+        <h3 class="heading">Sign Up</h3>
+        <h4 class="heading">Please Enter Your Deatails!</h4>
+      </div>
+      <div >
+        <label > Name</label>
+      </div>
+          <input type="text" id="firstName"   name="firstName" [(ngModel)]="customer.firstName" maxlength="100"  required>
+          <div ><br/>
+            <label > Email ID</label>
           </div>
-          <input type="text" id="firstName" class="fadeIn second" placeholder="FirstName" name="firstName" [(ngModel)]="customer.firstName" maxlength="100"  required>
-          <br>
-          <br>
-
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> LastName</label>
-          </div>
-          <input type="text" id="lastName" class="fadeIn second" placeholder="LastName" name="lastName" [(ngModel)]="customer.lastName" maxlength="100"  required>
-          <br>
-          <br>
-          
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/phone.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> PhoneNumber</label>
-          </div>
-          <input type="text" id="phoneNumber" #phone="ngModel" class="fadeIn second" placeholder="PhoneNumber" pattern="[789][0-9]{9}" name="phoneNumber" [(ngModel)]="customer.phoneNumber" maxlength="100"  required>
-          <div class="error text-danger" *ngIf="phone.errors?.pattern || phone.touched && phone.invalid">Enter Valid Phone Number</div>
-          <br>
-          <br>
-          
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/mail.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Email</label>
-          </div>
-          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="customer.email" maxlength="100"  required>
+          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email" [(ngModel)]="customer.email" maxlength="100"  required>
           <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
-          <br>
-          <br>
-          
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Password</label>
+          <div  ><br/>
+            <label > Password</label>
           </div>
-          <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn second" placeholder="Passowrd" name="password" [(ngModel)]="customer.password" maxlength="100"  required>
+          <input  type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"  name="password" [(ngModel)]="customer.password" maxlength="100"  required>
           <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
-          <br>
-          <br>
-
-          <div class="text-left" style="padding-left: 2em;">
-            <label class="h5"><span><img src="assets/images/re-password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Re-Password</label>
+          <div  ><br/>
+            <label > Re-Password</label>
           </div>
-          <input type="password" id="re-password" #repass="ngModel"  class="fadeIn second" placeholder="Re-Password" name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
+          <input type="password" id="re-password" #repass="ngModel"    name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
           <div class="error text-danger" *ngIf="repass.errors?.pattern || repass.touched && repass.invalid">Incorrect Password</div>
-          <br>
-          <br> 
-          <input  type="submit" class="fadeIn fourth" > 
+          <div ><br/>
+            <input class="button" type="submit" value="Sign up"> </div>
+          <div >
+            <a class="underlineHover" routerLink="/">Already have account? Sign in</a>
+          </div>
     </form>
-    <div id="formFooter">
-      <a class="underlineHover" routerLink="/">Already have account? Sign in</a>
-    </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
+</div>
 </div>
