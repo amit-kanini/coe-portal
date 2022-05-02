@@ -37,6 +37,7 @@ export class SignupComponent implements OnInit {
     this.service.signup(form).subscribe(
       data=>
       {
+        console.log(data,'data')
         if(data=="Already exists change your phone number or email")
         {
           this.status=true;
@@ -45,7 +46,7 @@ export class SignupComponent implements OnInit {
         else if(data=="Request sent to Admin")
         {
           alert(data);
-          this.router.navigate(['/'])
+          this.router.navigate(['/dashboard'])
         }
       }
     )
