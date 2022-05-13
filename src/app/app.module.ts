@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
@@ -23,8 +24,9 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
+import { ThirdScreenComponent } from './third-screen/third-screen.component';
 
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { RejectrequestComponent } from './rejectrequest/rejectrequest.component'
     DeleteuserComponent,
     ApproverequestComponent,
     RejectrequestComponent,
+    ThirdScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,9 @@ import { RejectrequestComponent } from './rejectrequest/rejectrequest.component'
     HttpClientModule,
     NoopAnimationsModule,
     NgbModule,
+    ChartsModule
+    ,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

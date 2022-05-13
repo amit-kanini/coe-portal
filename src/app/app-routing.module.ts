@@ -14,13 +14,15 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
+import { ThirdScreenComponent } from './third-screen/third-screen.component';
 
 
 const routes: Routes = [
-  {path:'login', component : LoginComponent},
-  {path:'', component : SignupComponent},
+  // {path:'login', component : LoginComponent},
+  // {path:'', component : SignupComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'logout', component : LogoutComponent},
+  {path:'', component : ThirdScreenComponent},
   // {path:'signup', component : SignupComponent},
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},

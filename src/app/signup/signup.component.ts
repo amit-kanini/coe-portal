@@ -46,7 +46,7 @@ export class SignupComponent implements OnInit {
         else if(data=="Request sent to Admin")
         {
           alert(data);
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/login'])
         }
       }
     )
