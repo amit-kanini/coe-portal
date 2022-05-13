@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:'rejectuser/:id', component : RejectrequestComponent},
   {path:'acceleratorinterest/:id',component:AcceleratorInterestComponent},
   {path:'main/:urlprm',component:MainscreenComponent},
-  {path:'test',component:AcceleratorDetailsComponent}
+  {path:'main/:urlprm/:id',component:MainscreenComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
