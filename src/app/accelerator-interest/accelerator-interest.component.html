@@ -1,0 +1,54 @@
+
+<app-header></app-header>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="wrapper fadeInDown">
+  <div class="error text-danger" *ngIf="status">
+    <h1>Error In Updating the Database</h1>
+  </div>
+  <br>
+  <br>
+  <div id="formContent">
+    
+    <br>
+
+    <div class="fadeIn first">
+      <img src="assets/images/project.png" id="icon" alt="User Icon" />
+    </div>
+    <br>
+
+        <form #Form="ngForm" (ngSubmit)="postInterest(acceleratorsChoice)" ngNativeValidate>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/accelerator.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Accelerators: </label>
+          </div>
+          <br>
+          <span *ngIf="userInterest.length==0" class="text-danger">No Previous Selections</span>
+          <br>
+          <span class="text-success">Prefer your New Selection</span>
+          <br>
+          <br>
+          <div *ngFor='let acc of acceleratorsChoice'>
+             {{acc.accName}}<span *ngIf="userInterest.indexOf(acc.accId)!=-1" class="text-success"> *Previous Selection </span> <select [(ngModel)]="acc.userInterest" name="acc.accName">
+              <option [ngValue]=0 >Select</option>  
+              <option [ngValue]="acc.accId">Interested</option>
+                <option [ngValue]=0 >No</option>
+              </select>
+              <br>
+              <br>
+          </div>
+          <ng-container *ngIf="loading;else normal">
+            <input type="submit" class="fadeIn fourth" value="Update">
+          </ng-container>
+          <ng-template #normal>
+            <button disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </ng-template> 
+    </form>
+  <br>
+  <br>
+</div>

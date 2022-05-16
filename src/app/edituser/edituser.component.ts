@@ -24,14 +24,14 @@ user:ICustomer={
     status:"",
     logTime:"",
     loginCounter:0,
-
-
 }
+status=false;
+invalidlogin=false;
+loading=true;
 accelerators: IAcceleretors[] = [];
   ngOnInit(): void {
-    //const cart_id=Number(this.route.snapshot.paramMap.get('cartId'));
-    const cart_id=Number(this.route.snapshot.paramMap.get('id'));
-    this.getUserById(cart_id);
+    const cust_id=Number(this.route.snapshot.paramMap.get('id'));
+    this.getUserById(cust_id);
     this.obj1.getAccelerators().subscribe((data)=>this.accelerators=data);
     console.log(this.accelerators);
   }
@@ -41,17 +41,28 @@ accelerators: IAcceleretors[] = [];
     this.obj.getUserById(id).subscribe(data=>
       {
         this.user=data;
-
-        console.log(this.user);
       })
   }
 
   putUserDetails():void{
+    this.loading=false;
     this.obj.putUser(this.user).subscribe(data=>
-      
       {
-        console.log(this.user);
-        this.router.navigate(['/manageuser']);
+        if(data=="Edited Successfully")
+        {
+          alert(data)
+          this.router.navigate(['/manageuser']);
+        }
+        else
+        {
+          this.loading=true;
+          this.status=true;
+          window.scroll(0,0);
+        }
+      },err=>
+      {
+        this.invalidlogin=true;
+        this.loading=true;
       })
 
   }

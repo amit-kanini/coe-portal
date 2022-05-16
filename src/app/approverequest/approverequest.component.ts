@@ -22,12 +22,13 @@ export class ApproverequestComponent implements OnInit {
       status:"",
       logTime:"",
       loginCounter:0,
-  
-  
   }
+status=false;
+invalidlogin=false;
+loading=true;
   ngOnInit(): void {
-    const cart_id=Number(this.route.snapshot.paramMap.get('id'));
-    this.getUserById(cart_id);
+    const user_id=Number(this.route.snapshot.paramMap.get('id'));
+    this.getUserById(user_id);
   }
   getUserById(id:number):void
   {
@@ -35,16 +36,27 @@ export class ApproverequestComponent implements OnInit {
     this.obj.getUserById(id).subscribe(data=>
       {
         this.user=data;
-
-        console.log(this.user);
       })
   }
 
   approveUser(id:number):void{
+    this.loading=false;
     this.obj.approveUser(id).subscribe(data=>
       {
-        console.log(this.user);
-        this.router.navigate(['/manageuser']);
+        if(data=="Approved"||data=="Already Approved")
+        {
+          alert(data)
+          this.router.navigate(['/manageuser']);
+        }
+        else
+        {
+          this.loading=true;
+          this.status=true;
+        }
+      },err=>
+      {
+        this.loading=true
+        this.invalidlogin=true;
       })
 
   }

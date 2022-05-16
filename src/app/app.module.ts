@@ -24,7 +24,21 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
+
 import { ThirdScreenComponent } from './third-screen/third-screen.component';
+
+import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainscreenComponent } from './mainscreen/mainscreen.component';
+import { AcceleratorsComponent } from './accelerators/accelerators.component';
+import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-details.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 
 import { ChartsModule } from 'ng2-charts';
 
@@ -47,6 +61,12 @@ import { ChartsModule } from 'ng2-charts';
     ApproverequestComponent,
     RejectrequestComponent,
     ThirdScreenComponent,
+    AcceleratorInterestComponent,
+    SidebarComponent,
+    MainscreenComponent,
+    AcceleratorsComponent,
+    AcceleratorDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,9 +76,14 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     NoopAnimationsModule,
     NgbModule,
-    ChartsModule
-    ,
- 
+    ChartsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,6 +38,7 @@
           </div>
           <input type="password" id="re-password" #repass="ngModel"    name="Re-Password"  [(ngModel)]="password" pattern="{{ pass.value }}" required>
           <div class="error text-danger" *ngIf="repass.errors?.pattern || repass.touched && repass.invalid">Incorrect Password</div>
+
           <div ><br/>
             <input class="button" type="submit" value="Sign up"> </div>
           <div >

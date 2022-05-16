@@ -1,27 +1,79 @@
-<div class="row">
-    <div class="col-md-4">
-        <form style="position: relative; left: 20px;">
-            <br>
-            <div class="form-group">
-                <label for="flowerid">First Name: </label>
-                <input type="text" id="flowerid" [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}" placeholder=" fisrt name">
-            </div>
-            <div class="form-group">
-                <label for="flowerid">Last Name: </label>
-                <input  type="text" id="flowerid" [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}" placeholder=" Last name">
-            </div>
-            <div class="form-group">
-                <label for="flowerid">Phone: </label>
-                <input type="text"  id="flowerid" [(ngModel)]="user.phoneNumber" [ngModelOptions]="{standalone: true}" placeholder=" Last name">
-            </div>
-            <div class="form-group">
-                <label for="flowerid">Email: </label>
-                <input type="text" id="flowerid" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder=" Last name">
-            </div>
-       
-                 
-            <button class="btn btn-primary"  (click)="approveUser(user.customerId)">Approve User</button>
-       </form>
+
+<app-header></app-header>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="wrapper fadeInDown">
+  <div class="error text-danger" *ngIf="status">
+    <h1>Error In Updating the Database</h1>
+  </div>
+  <br>
+  <br>
+  <div id="formContent">
+    
+    <br>
+
+    <div class="fadeIn first">
+      <img src="assets/images/user.png" id="icon" alt="User Icon" />
     </div>
- </div>
- 
+    <br>
+
+        <form #Form="ngForm" (ngSubmit)="approveUser(user.customerId)" ngNativeValidate>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> FirstName</label>
+          </div>
+          <input type="text" id="firstName" class="fadeIn second" placeholder="FirstName" name="firstName" [(ngModel)]="user.firstName" maxlength="100"  required disabled>
+          <br>
+          <br>
+
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/name.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> LastName</label>
+          </div>
+          <input type="text" id="lastName" class="fadeIn second" placeholder="LastName" name="lastName" [(ngModel)]="user.lastName" maxlength="100"  required disabled>
+          <br>
+          <br>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/phone.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> PhoneNumber</label>
+          </div>
+          <input type="text" id="phoneNumber" #phone="ngModel" class="fadeIn second" placeholder="PhoneNumber" pattern="[789][0-9]{9}" name="phoneNumber" [(ngModel)]="user.phoneNumber" maxlength="100"  required disabled>
+          <div class="error text-danger" *ngIf="phone.errors?.pattern || phone.touched && phone.invalid">Enter Valid Phone Number</div>
+          <br>
+          <br>
+          
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/mail.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Email</label>
+          </div>
+          <input type="text" #mail="ngModel" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="fadeIn second" placeholder="Email" name="email" [(ngModel)]="user.email" maxlength="100"  required disabled>
+          <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
+          <br>
+          <br>
+
+          <div class="text-left" style="padding-left: 2em;">
+            <label class="h5"><span><img src="assets/images/status.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Status</label>
+          </div>
+          <input type="text" id="firstName" class="fadeIn second" placeholder="Status" name="status" [(ngModel)]="user.status" maxlength="100"  required disabled>
+          <br>
+          <br>
+          
+
+          <div class="error text-danger" *ngIf="invalidlogin">
+            Invalid Request!!
+          </div>
+          <br>
+          <br> 
+          <ng-container *ngIf="loading;else normal">
+            <input type="submit" class="fadeIn fourth" value="Approve">
+          </ng-container>
+          <ng-template #normal>
+            <button disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </ng-template> 
+    </form>
+  <br>
+  <br>
+</div>
