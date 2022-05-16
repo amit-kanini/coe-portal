@@ -24,6 +24,9 @@ export class UpdatedetailsComponent implements OnInit {
     accImg:	"",
     accDoc:	"",
     accVideo:"",
+    accHowIt:'',
+    accLogo:'',
+    accNumberOfDays:''
   };
  
   ngOnInit(): void {

@@ -24,6 +24,16 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
 import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainscreenComponent } from './mainscreen/mainscreen.component';
+import { AcceleratorsComponent } from './accelerators/accelerators.component';
+import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-details.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -46,6 +56,10 @@ import { AcceleratorInterestComponent } from './accelerator-interest/accelerator
     ApproverequestComponent,
     RejectrequestComponent,
     AcceleratorInterestComponent,
+    SidebarComponent,
+    MainscreenComponent,
+    AcceleratorsComponent,
+    AcceleratorDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +69,12 @@ import { AcceleratorInterestComponent } from './accelerator-interest/accelerator
     HttpClientModule,
     NoopAnimationsModule,
     NgbModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

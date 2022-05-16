@@ -15,6 +15,8 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
 import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
+import { MainscreenComponent } from './mainscreen/mainscreen.component';
+import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-details.component';
 
 
 const routes: Routes = [
@@ -31,7 +33,9 @@ const routes: Routes = [
   {path:'deleteuser/:id', component : DeleteuserComponent},
   {path:'approveuser/:id', component : ApproverequestComponent},
   {path:'rejectuser/:id', component : RejectrequestComponent},
-  {path:'acceleratorinterest/:id',component:AcceleratorInterestComponent}
+  {path:'acceleratorinterest/:id',component:AcceleratorInterestComponent},
+  {path:'main/:urlprm',component:MainscreenComponent},
+  {path:'main/:urlprm/:id',component:MainscreenComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -11,4 +11,10 @@ export interface IAcceleretors{
     accDoc:	string;
  
     accVideo:string;
+
+    accHowIt:string;
+
+    accNumberOfDays:string;
+    accLogo:string;
+
 }

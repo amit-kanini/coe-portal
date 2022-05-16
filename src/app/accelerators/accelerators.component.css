@@ -1,0 +1,53 @@
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  .container {
+    display: block;
+    width: 100%;
+  }
+  
+  .card {
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+    max-height: 10em;
+    /*setting width for each and every card element as well as -10px for removing the margin width for 5 elements*/
+    width: calc( 100% / 3 - 10px);
+  }
+  .textlimit
+  {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+  }
+  
+  /*first element*/
+  
+  .container .card:first-child {
+    margin-left: 0;
+  }
+  
+  
+  /*last element of the first row*/
+  
+  .container .card:nth-child(3n) {
+    margin-right: 0;
+  }
+  
+  
+  /*first-element of the 2nd row*/
+  
+  .container .card:nth-child(3n+1) {
+    margin-left: 0;
+  }
+  
+  
+  /*last element*/
+  
+  .container .card:last-child {
+    margin-right: 0;
+  }
