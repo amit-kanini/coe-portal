@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,9 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
+
+import { ThirdScreenComponent } from './third-screen/third-screen.component';
+
 import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
@@ -36,6 +40,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -55,11 +60,13 @@ import { MatListModule } from '@angular/material/list';
     DeleteuserComponent,
     ApproverequestComponent,
     RejectrequestComponent,
+    ThirdScreenComponent,
     AcceleratorInterestComponent,
     SidebarComponent,
     MainscreenComponent,
     AcceleratorsComponent,
     AcceleratorDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,12 +76,14 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     NoopAnimationsModule,
     NgbModule,
+    ChartsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,42 @@
-/* BASIC */
+.box{
+  float:right;
+  margin-top: 45px;
+  align-self: start;
+  width:33%;
+  border-radius: 5px;
+  border: 2px;
+  
+}
+
+
+.heading{
+  color: rgb(3, 3, 109);
+}
+
+.button{
+  width: 190px;
+  background-color: rgb(52, 127, 239);
+  border-radius: 5px;
+}
+
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
 
 html {
     background-color: #56baed;

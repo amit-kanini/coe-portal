@@ -14,16 +14,22 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { ApproverequestComponent } from './approverequest/approverequest.component';
 import { RejectrequestComponent } from './rejectrequest/rejectrequest.component';
+
+import { ThirdScreenComponent } from './third-screen/third-screen.component';
+
 import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
 import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-details.component';
 
 
+
 const routes: Routes = [
-  {path:'', component : LoginComponent},
+  // {path:'login', component : LoginComponent},
+  // {path:'', component : SignupComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'logout', component : LogoutComponent},
-  {path:'signup', component : SignupComponent},
+  {path:'', component : ThirdScreenComponent},
+  // {path:'signup', component : SignupComponent},
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},

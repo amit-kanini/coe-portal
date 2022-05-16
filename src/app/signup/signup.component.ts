@@ -40,7 +40,11 @@ export class SignupComponent implements OnInit {
     this.service.signup(form).subscribe(
       data=>
       {
+
+        console.log(data,'data')
+
         this.invalidlogin=false;
+
         if(data=="Already exists change your phone number or email")
         {
           this.loading=true;
@@ -50,7 +54,7 @@ export class SignupComponent implements OnInit {
         else if(data=="Request sent to Admin")
         {
           alert(data);
-          this.router.navigate(['/'])
+          this.router.navigate(['/login'])
         }
       },err=>
       {
