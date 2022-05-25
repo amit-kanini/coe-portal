@@ -21,6 +21,12 @@ export class ThirdScreenComponent implements OnInit {
     { data: [45, 37, 60, 70, 46, 33,15,20,35], label: 'Best Fruits' }
   ];
 
+  public barChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgb(159, 194, 102)',
+    },
+  ];
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40,60,55,45], label: 'Series A' },
   ];
@@ -31,7 +37,7 @@ export class ThirdScreenComponent implements OnInit {
   public lineChartColors: Color[] = [
     {
       borderColor: 'black',
-      backgroundColor: 'rgb(65, 207, 86)',
+      backgroundColor: 'rgb(205, 154, 87)',
     },
   ];
   public lineChartLegend = true;
