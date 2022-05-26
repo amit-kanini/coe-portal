@@ -1,70 +1,57 @@
-<app-header></app-header>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="wrapper fadeInDown">
+<div >
   <div class="error text-success" *ngIf="status">
      <h1><span> <img src="assets/images/loading.png"  class="d-inline-block align-top" height="50" width="50" alt="Loading Icon" /></span> Status Pending</h1>
   </div>
-  <br>
-  <br>
-  <div id="formContent">
-    <!-- Tabs Titles -->
+
+  <div >
+    <div >
+      <img src="../../assets/images/Screenshot (27).png" width="800" height="600" align="left">
+    </div>
+  
+<div class="box">
+  <form (ngSubmit)="getid_loginapi(phone, password)"  ngNativeValidate> 
+    <div>
+      <!-- <h3 >COE</h3> -->
+      <div style="display:flex">
+        <img src="../../assets/images/coeLogo.png" width="50" height="50">
+        <h1 style="margin-top:10px;">COE</h1>
+      </div>
+      
+      <h2 class="heading">Sign In</h2>
+      <h4 class="heading">Welcome Back! Please enter your details</h4>
+    </div>     
+    <div >
+      <label>Email ID</label>
+    </div>
+    <input type="text" id="login" #mail="ngModel" class="fadeIn second" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" name="tempEmail" [(ngModel)]="phone" maxlength="100"  required>
+    <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
     <br>
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="assets/images/user.png" id="icon" alt="User Icon" />
+    <div >
+      <label> Password</label>
+    </div>
+    <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn third" name="login" placeholder="Password" name="pass" [(ngModel)]="password" >
+    <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
+    <br>
+    <div class="error text-danger" *ngIf="invalidlogin">
+      Invalid User name or Password 
+
     </div>
     <br>
-    <!-- Login Form -->
-
-    <form (ngSubmit)="getid_loginapi(phone, password)" ngNativeValidate>      
-      
-      <div class="text-left" style="padding-left: 2em;">
-        <label class="h5"><span><img src="assets/images/mail.png" width="20" height="20" class="d-inline-block align-top" alt=""> </span> Mail</label>
-      </div>
-      <input type="text" id="login" #mail="ngModel" class="fadeIn second" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" name="tempEmail" [(ngModel)]="phone" maxlength="100"  required>
-      <div class="error text-danger" *ngIf="mail.errors?.pattern || mail.touched && mail.invalid">Enter Valid Mail id</div>
-      <br>
-      <br>
-
-      <div class="text-left" style="padding-left: 2em;">
-        <label class="h5"><span><img src="assets/images/password.png" width="30" height="30" class="d-inline-block align-top" alt=""> </span> Password</label>
-      </div>
-      <input type="password" #pass="ngModel" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" class="fadeIn third" name="login" placeholder="Password" name="pass" [(ngModel)]="password" >
-      <div class="error text-danger" *ngIf="pass.errors?.pattern || pass.touched && pass.invalid">Password should be 8 to 16 character should contain one number one caps letter,one special character</div>
-      <br>
-      
-      <div class="error text-danger" *ngIf="invalidlogin">
-        Invalid User name or Password 
-      </div>
-      <br>
-      <br>
-
-      <ng-container *ngIf="loading;else normal">
-        <input type="submit" class="fadeIn fourth" value="Log In">
-      </ng-container>
-      <ng-template #normal>
-        <button disabled>
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Loading...
-        </button>
-      </ng-template>
-
-    </form>
-
-    <div id="formFooter">
-      <a class="underlineHover" routerLink="/signup">New User? Sign Up</a>
-    </div>
-    
+     <input class="button" type="submit"  value="Log In"> 
+  </form>
+  <div >
+    <a class="underlineHover" routerLink="/signup">New User? Sign Up</a>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
+
+</div>
+   
+   
+  </div>
 </div>
 
 
-<app-footer></app-footer>
