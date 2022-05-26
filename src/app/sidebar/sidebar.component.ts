@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
     if(headerurl=='dash')
     {
     this.dashboard='yes'
+    this.dashboards=''
     this.report=''
     this.accelerator=''
     this.dashboardDetail=''
@@ -22,6 +23,7 @@ export class SidebarComponent implements OnInit {
     {
       this.dashboard=''
       this.report=''
+      this.dashboards=''
       this.accelerator='yes'
       this.dashboardDetail=''
     }
@@ -29,6 +31,7 @@ export class SidebarComponent implements OnInit {
     {
       this.dashboard=''
       this.report='yes'
+      this.dashboards=''
       this.accelerator=''
       this.dashboardDetail=''
     }
@@ -37,12 +40,22 @@ export class SidebarComponent implements OnInit {
       this.dashboard=''
       this.report=''
       this.accelerator=''
+      this.dashboards=''
       this.dashboardDetail='yes'
       console.log(localStorage.getItem('acc'))
+    }
+    else if(headerurl=='dashboards')
+    {
+      this.dashboard=''
+      this.report=''
+      this.dashboards='yes'
+      this.accelerator=''
+      this.dashboardDetail=''
     }
     });
    }
   dashboard='yes'
+  dashboards=''
   report=''
   accelerator=''
   dashboardDetail=''
@@ -62,6 +75,10 @@ export class SidebarComponent implements OnInit {
     else if(val=='report')
     {
       this.router.navigate(['main/report'])
+    }
+    else if(val=='dashboards')
+    {
+      this.router.navigate(['main/dashboards'])
     }
   }
 

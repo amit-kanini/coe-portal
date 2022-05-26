@@ -14,11 +14,10 @@ img{
 }
 
 .icons{
-   margin-top: 25px; 
+   margin-top: 10px; 
 }
 
 .data{
     display:flex;
-    margin-left: 200px;
     margin-top:5px;
 }

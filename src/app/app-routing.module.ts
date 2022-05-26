@@ -24,12 +24,12 @@ import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-d
 
 
 const routes: Routes = [
-  // {path:'login', component : LoginComponent},
-  // {path:'', component : SignupComponent},
+  {path:'login', component : LoginComponent},
+   {path:'', component : SignupComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'logout', component : LogoutComponent},
-  {path:'', component : ThirdScreenComponent},
-  // {path:'signup', component : SignupComponent},
+  {path:'hi', component : ThirdScreenComponent},
+  {path:'signup', component : SignupComponent},
   {path:'manageaccelerators', component : ManageacceleratorsComponent},
   {path:'productowner', component : ProductownerComponent},
   {path:'coreteam', component : CoreteamComponent},

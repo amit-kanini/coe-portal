@@ -52,7 +52,7 @@ userid:string|null=null;
           localStorage.setItem("username",data.firstName+" "+data.lastName);
           localStorage.setItem("userid",data.customerId.toString());
           localStorage.setItem("userStat",String(data.isAdmin));
-          this.router.navigate(['/main']);
+          this.router.navigate(['/main/acc']);
          }
          else if(this.customer.status=="Pending")
          {

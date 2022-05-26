@@ -15,6 +15,17 @@
         </div>
     </ng-template>
     <br>
+    <ng-container *ngIf="dashboards;else normal3">
+        <div style="background-color:#1076BD; font-weight: 700;">
+            <a  href="" (click)="$event.preventDefault();"><img style="padding-bottom: 3px;" src="assets/images/Report.png" width="20px" height="22px" id="icon" alt="User Icon" /><span> Dashboards</span></a>
+        </div>
+    </ng-container>
+    <ng-template #normal3>
+        <div>
+        <a (click)="$event.preventDefault();button('dashboards')" href=""><img style="padding-bottom: 3px;" src="assets/images/Report.png" width="20px" height="22px" id="icon" alt="User Icon" /><span> Dashboards</span></a>
+        </div>
+    </ng-template>
+    <br>
     <ng-container *ngIf="accelerator||dashboardDetail;else normal1">
         <div style="background-color:#1076BD; font-weight: 700;">
             <a  href="" (click)="$event.preventDefault();"><img style="padding-bottom: 3px;" src="assets/images/acceleratoricon.png" width="20px" height="22px" id="icon" alt="User Icon" /><span> Accelerators</span></a>
@@ -53,13 +64,19 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COE | Dashboard
         <br>
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Progress
+        <app-third-screen></app-third-screen>
     </div>
     <div *ngIf="accelerator;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COE | Manage Accelerator
         <br>
         <br>
         <app-accelerators></app-accelerators>
+    </div>
+    <div *ngIf="dashboards;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COE | Dashboards
+        <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Progress
     </div>
     <div *ngIf="report;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COE | Reports

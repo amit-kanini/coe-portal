@@ -19,6 +19,7 @@ export class AcceleratorDetailsComponent {
       shareReplay()
     );
     isExpanded=true
+    isExpandeds=false
     accelerators: IAcceleretors[] = [];
     b:null|Number=0
     accelerator:IAcceleretors={

@@ -1,70 +1,70 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 
 <div class="container rounded bg-white mt-5 mb-5">
   <div class="row">
       <div class="col-md-4 border-right">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5" style="margin-top: 130px;">
-            <!-- <h4 class="font-weight-bold mt-5" style="border: 1px solid #198754; padding: 20px;">Accelerator Name</h4>
-            <span> </span> -->
-          </div>
-      </div>
-      <div class="col-md-5 border-right">
-          <div class="p-3 py-5">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4 class="text-right">Accelerator Settings</h4>
-              </div>
-              <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
-              <div class="row mt-3">  
-                  <div [hidden]="true" class="col-md-12"><label class="labels" style="font-size: 15px;">Id</label><input id="accId" name="accId" [(ngModel)]="accelerators.accId" type="text" class="form-control" value={{accelerators.accId}} [disabled]="clicked"><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Name</label><input id="accName" name="accName" [(ngModel)]="accelerators.accName" type="text" class="form-control" value={{accelerators.accName}} [disabled]="clicked"><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Description</label><textarea class="form-control" rows="3" [disabled]="clicked" id="accDescr" name="accDescr" [(ngModel)]="accelerators.accDescr" value={{accelerators.accDescr}}></textarea><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Website Url</label><input type="text" class="form-control" id="accUrl" name="accUrl" [(ngModel)]="accelerators.accUrl" value={{accelerators.accUrl}} [disabled]="clicked"><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Image Url</label><input type="text" class="form-control" id="accImg" name="accImg" [(ngModel)]="accelerators.accImg" value={{accelerators.accImg}} [disabled]="clicked"><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Document Url</label><input type="text" class="form-control" id="accDoc" name="accDoc" [(ngModel)]="accelerators.accDoc" value={{accelerators.accDoc}} [disabled]="clicked"><br></div>
-                  <div class="col-md-12"><label class="labels" style="font-size: 15px;">Video Url</label><input type="text" class="form-control" id="accVideo" name="accVideo" [(ngModel)]="accelerators.accVideo" value={{accelerators.accVideo}} [disabled]="clicked"><br></div>
-              
+          <h4 class="font-weight-bold mt-5" style="border: 1px solid #198754; padding: 20px;">Accelerator Name</h4> -->
+            <!-- <span> </span> --> 
+          <!-- </div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Accelerator Settings</h4>
                 </div>
-              <div class="mt-5 text-center">
-                <input type="button" class="btn btn-primary profile-button" [hidden]="ishidden" (click)="buttonChanges2(accelerators.accId)" value="Cancel" style="padding-left: 20px;padding-right: 20px;margin-right: 20px;">
-                <input type="submit" class="btn btn-primary profile-button" [hidden]="ishidden" value="Update" style="padding-left: 20px;padding-right: 20px;">
-              </div>
-            </form>
-            <div class="mt-5 text-center"> 
-              <input type="submit" class="btn btn-primary profile-button" [hidden]="!ishidden" (click)="buttonChanges1()" value="Edit" style="padding-left: 20px;padding-right: 20px;">
-            </div> 
-            </div>         
-      </div>
+                <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
+                <div class="row mt-3">  
+                    <div [hidden]="true" class="col-md-12"><label class="labels" style="font-size: 15px;">Id</label><input id="accId" name="accId" [(ngModel)]="accelerators.accId" type="text" class="form-control" value={{accelerators.accId}} [disabled]="clicked"><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Name</label><input id="accName" name="accName" [(ngModel)]="accelerators.accName" type="text" class="form-control" value={{accelerators.accName}} [disabled]="clicked"><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Description</label><textarea class="form-control" rows="3" [disabled]="clicked" id="accDescr" name="accDescr" [(ngModel)]="accelerators.accDescr" value={{accelerators.accDescr}}></textarea><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Website Url</label><input type="text" class="form-control" id="accUrl" name="accUrl" [(ngModel)]="accelerators.accUrl" value={{accelerators.accUrl}} [disabled]="clicked"><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Image Url</label><input type="text" class="form-control" id="accImg" name="accImg" [(ngModel)]="accelerators.accImg" value={{accelerators.accImg}} [disabled]="clicked"><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Document Url</label><input type="text" class="form-control" id="accDoc" name="accDoc" [(ngModel)]="accelerators.accDoc" value={{accelerators.accDoc}} [disabled]="clicked"><br></div>
+                    <div class="col-md-12"><label class="labels" style="font-size: 15px;">Video Url</label><input type="text" class="form-control" id="accVideo" name="accVideo" [(ngModel)]="accelerators.accVideo" value={{accelerators.accVideo}} [disabled]="clicked"><br></div>
+                
+                  </div>
+                <div class="mt-5 text-center">
+                  <input type="button" class="btn btn-primary profile-button" [hidden]="ishidden" (click)="buttonChanges2(accelerators.accId)" value="Cancel" style="padding-left: 20px;padding-right: 20px;margin-right: 20px;">
+                  <input type="submit" class="btn btn-primary profile-button" [hidden]="ishidden" value="Update" style="padding-left: 20px;padding-right: 20px;">
+                </div>
+              </form>
+              <div class="mt-5 text-center"> 
+                <input type="submit" class="btn btn-primary profile-button" [hidden]="!ishidden" (click)="buttonChanges1()" value="Edit" style="padding-left: 20px;padding-right: 20px;">
+              </div> 
+              </div>         
+        </div>
+    </div>
   </div>
-</div>
-
-
-<app-footer></app-footer>
-
-
-
-
-<!-- <div class="form-group">
-  <label for="exampleFormControlSelect1">Example select</label>
-  <select class="form-control" id="exampleFormControlSelect1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
-</div> -->
-
-
-<!-- <div class="form-group">
-  <label for="exampleFormControlSelect2">Example multiple select</label>
-  <select multiple class="form-control" id="exampleFormControlSelect2">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-  </select>
-</div> -->
-
-<!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+  
+   -->
+  <!-- <app-footer></app-footer> --> -->
+  
+  
+  
+  
+  <!-- <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div> -->
+  
+  
+  <!-- <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div> -->
+  
+  <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->

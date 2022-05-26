@@ -12,9 +12,9 @@
       </ng-container>
       <ng-template #normal>
         <a routerLink="/main/dashboardDetail/{{acc.accId}}">
-        <mat-list-item>
+        <mat-list-item >
           <img src='{{acc.accLogo}}' width="30px" height="30px" id="icon" alt="User Icon" />
-          <span><h4 style="margin-bottom: 2px; max-width: 220px;" mat-line *ngIf="isExpanded">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{acc.accName}}</h4></span>
+          <span><h4 style="margin-bottom: 2px; max-width: 220px;" mat-line *ngIf="isExpanded" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{acc.accName}}</h4></span>
         </mat-list-item>
       </a>
         <br>
@@ -27,7 +27,8 @@
     <img src="assets/images/arrow.png" width="20px" height="20px" id="icon" alt="User Icon" />
   </a>
   <div class="example-sidenav-content" style="height: 700px;">
-    <div class="card" id="mainacc" [ngStyle]="{'width':isExpanded === true ? '43rem;': '56rem'}" style="margin: 15px;">
+    
+    <div class="card" id="mainacc" ng-style="isExpanded && {'width':'43rem'} || {'width':'56rem'}"style="margin: 15px;">
       <img src="{{accelerator.accImg}}" style="height: 150px;
       object-fit: cover;
       display: block;
@@ -36,6 +37,14 @@
         <img style="margin: 2px;" src='{{accelerator.accLogo}}' width="55px" height="55px" id="icon" alt="User Icon" /></div>
       <br><br>
       <div class="card-body">
+        <button ng-style="isExpanded && {'margin-left':'550px'} || {'margin-left':'750px'}"  style="
+        width: 86px;
+        height: 36px;
+        color: white;
+        background: #1076BD;
+        border-radius: 4px;
+        margin-left:550px;
+        border: white;">Try it out</button>
         <h4 style="font-size: 18px; color:#12355B; font-weight: 700; margin: 3px;" class="card-title">{{accelerator.accName}}</h4>
         <p style="color:#12355B;font-size: 12px;margin-left: 8px;">Added 4 days ago</p> 
         <br>
@@ -43,7 +52,7 @@
         <p class="card-text">{{accelerator.accDescr}}</p>
         <br>
         <h4 style="font-size: 16px; color:#12355B; font-weight: 700;" class="card-title">How it is useful ?</h4>
-        <p class="card-text">
+        <p class="card-text" >
           Some quick example text to build on the card title and make up the bulk of the card's content.
           Some quick example text to build on the card title and make up the bulk of the card's content.
           Some quick example text to build on the card title and make up the bulk of the card's content.
