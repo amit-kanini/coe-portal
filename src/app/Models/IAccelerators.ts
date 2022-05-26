@@ -15,6 +15,7 @@ export interface IAcceleretors{
     accHowIt:string;
 
     accNumberOfDays:string;
+    
     accLogo:string;
 
 }
