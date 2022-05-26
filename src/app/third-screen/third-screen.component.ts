@@ -12,13 +12,13 @@ export class ThirdScreenComponent implements OnInit {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
-  barChartLabels: Label[] = ['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes','A','B','C','D'];
+  barChartLabels: Label[] = ['Acc1', 'Acc2', 'Acc3', 'Acc4', 'Acc5', 'Acc16','Acc7','Acc8','Acc9','Acc10'];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
  
   barChartData: ChartDataSets[] = [
-    { data: [45, 37, 60, 70, 46, 33,15,20,35], label: 'Best Fruits' }
+    { data: [45, 37, 60, 70, 46, 33,15,20,35], label: 'Accelerators' }
   ];
 
   public barChartColors: Color[] = [
