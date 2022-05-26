@@ -24,6 +24,7 @@ import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-d
 
 
 const routes: Routes = [
+
   {path:'login', component : LoginComponent},
    {path:'', component : SignupComponent},
   {path:'dashboard', component : DashboardComponent},

@@ -1,59 +1,63 @@
 <!-- <p>third-screen works!</p> -->
 
+<div class="parent_container">
 
-<div class="data">
-    <div>
-        <div class="content">
-            <div class="icons">
-                <img src="../../assets/images/user.png"/>
+    <div class="data">
+        <div>
+            <div class="content">
+                <div class="icons">
+                    <img src="../../assets/images/user.png"/>
+                </div>
+                <div class="data_feed"> 
+                    <h2>230</h2>
+                    <h2>Total no of User</h2>
+                </div>
+            </div >
+            <div class="content">
+                <div class="icons">
+                    <img src="../../assets/images/user.png"/>
+                </div>
+                <div class="data_feed"> 
+                    <h2>10</h2>
+                    <h2>Active User</h2>
+                </div>
+            </div >
+            <div class="content">
+                <div class="icons">
+                    <img src="../../assets/images/user.png"/>
+                </div>
+                <div class="data_feed"> 
+                    <h2>10</h2>
+                    <h2>No of accelerator</h2>
+                </div>      
             </div>
-            <div> 
-                <h1>230</h1>
-                <h3>Total no of User</h3>
-            </div>
-        </div >
-        <div class="content">
-            <div class="icons">
-                <img src="../../assets/images/user.png"/>
-            </div>
-            <div> 
-                <h1>10</h1>
-                <h3>Active User</h3>
-            </div>
-        </div >
-        <div class="content">
-            <div class="icons">
-                <img src="../../assets/images/user.png"/>
-            </div>
-            <div> 
-                <h1>10</h1>
-                <h3>No of accelerator</h3>
-            </div>      
+        </div>
+            
+        <div class="lineGraph" >
+            <canvas baseChart width="800" height="250"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+            </canvas>
         </div>
     </div>
-        
-    <div >
-        <canvas baseChart width="800" height="250"
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
-        [options]="lineChartOptions"
-        [colors]="lineChartColors"
-        [legend]="lineChartLegend"
-        [chartType]="lineChartType"
-        [plugins]="lineChartPlugins">
+    
+    <div  class="barChart" style="width:auto;margin-top:30px;margin-left:200px;">
+        <div >
+        <canvas baseChart width="1000" height="250" 
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [colors]="barChartColors"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
         </canvas>
+        </div>
     </div>
-</div>
-
-<div style="width:auto;margin-top:30px">
-    <div >
-    <canvas baseChart width="1000" height="250"
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-    </canvas>
-    </div>
+    
 </div>

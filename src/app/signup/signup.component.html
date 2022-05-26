@@ -15,12 +15,15 @@
   <div class="box">
     <form  #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" ngNativeValidate>
       <div>
-        <h3 >COE</h3>
-        <h3 class="heading">Sign Up</h3>
+        <div style="display:flex">
+          <img src="../../assets/images/coeLogo.png" width="50" height="50">
+          <h1 style="margin-top:10px;">COE</h1>
+        </div>
+        <h2 class="heading">Sign Up</h2>
         <h4 class="heading">Please Enter Your Deatails!</h4>
       </div>
       <div >
-        <label > Name</label>
+        <label> Name</label>
       </div>
           <input type="text" id="firstName"   name="firstName" [(ngModel)]="customer.firstName" maxlength="100"  required>
           <div ><br/>
