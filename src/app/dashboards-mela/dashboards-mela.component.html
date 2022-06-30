@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card" style="width: 19rem;" *ngFor='let dash of dashunique'>
+        <div class="card-horizontal" >
+            <div class="img-square-wrapper">
+                <img src='{{dash.dashImg}}' width="145px" height="176px" alt="Card image cap">
+            </div>
+            <div class="card-body" style="font-size: 10px;">
+                <h4 class="card-title textlimit" style="font-size: 15px; color: #12355B;line-height: 28px;font-weight: 700;">{{dash.dashType}}</h4>
+                <p class="card-text textlimit">{{dash.dashShortDescr}}</p>
+                <a routerLink="/main/dashboardDetails/{{dash.dashType}}" style="color: #1076BD; font-weight: 400;"><u>View Details</u></a>
+            </div>
+        </div>
+    </div>
+    </div>

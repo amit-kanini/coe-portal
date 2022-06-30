@@ -41,6 +41,8 @@ import { MatListModule } from '@angular/material/list';
 
 
 import { ChartsModule } from 'ng2-charts';
+import { DashboardsMelaComponent } from './dashboards-mela/dashboards-mela.component';
+import { DashboardMelaDetailsComponent } from './dashboard-mela-details/dashboard-mela-details.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { ChartsModule } from 'ng2-charts';
     MainscreenComponent,
     AcceleratorsComponent,
     AcceleratorDetailsComponent,
+    DashboardsMelaComponent,
+    DashboardMelaDetailsComponent,
 
   ],
   imports: [

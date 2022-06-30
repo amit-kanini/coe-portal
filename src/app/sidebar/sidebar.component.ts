@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit {
     this.report=''
     this.accelerator=''
     this.dashboardDetail=''
+    this.dashdetail=''
     }
     else if(headerurl=='acc')
     {
@@ -26,6 +27,7 @@ export class SidebarComponent implements OnInit {
       this.dashboards=''
       this.accelerator='yes'
       this.dashboardDetail=''
+      this.dashdetail=''
     }
     else if(headerurl=='report')
     {
@@ -34,6 +36,7 @@ export class SidebarComponent implements OnInit {
       this.dashboards=''
       this.accelerator=''
       this.dashboardDetail=''
+      this.dashdetail=''
     }
     else if(headerurl=='dashboardDetail')
     {
@@ -42,6 +45,7 @@ export class SidebarComponent implements OnInit {
       this.accelerator=''
       this.dashboards=''
       this.dashboardDetail='yes'
+      this.dashdetail=''
       console.log(localStorage.getItem('acc'))
     }
     else if(headerurl=='dashboards')
@@ -51,6 +55,16 @@ export class SidebarComponent implements OnInit {
       this.dashboards='yes'
       this.accelerator=''
       this.dashboardDetail=''
+      this.dashdetail=''
+    }
+    else if(headerurl=='dashboardDetails')
+    {
+      this.dashboard=''
+      this.report=''
+      this.dashboards=''
+      this.accelerator=''
+      this.dashboardDetail=''
+      this.dashdetail='yes'
     }
     });
    }
@@ -59,6 +73,7 @@ export class SidebarComponent implements OnInit {
   report=''
   accelerator=''
   dashboardDetail=''
+  dashdetail=''
   ngOnInit(): void {
     
   }

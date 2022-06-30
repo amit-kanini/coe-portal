@@ -1,7 +1,6 @@
 .barChart{
     width:auto;
     margin-top:30px;
-    margin-left:200px;
     background-color: rgb(255, 255, 255);
 }
 
@@ -34,12 +33,10 @@ img{
 
 .icons{
    margin-top: 15px; 
-   margin-left:5px;
 }
 
 .data{
     display:flex;
-    margin-left: 200px;
  
     column-gap: 25px;;
 }
@@ -47,6 +44,5 @@ img{
 .data_feed{
     display: flex;
     flex-direction: column;
-    margin-left:20px;
     column-gap: 10px;
 }

@@ -37,14 +37,26 @@
         <img style="margin: 2px;" src='{{accelerator.accLogo}}' width="55px" height="55px" id="icon" alt="User Icon" /></div>
       <br><br>
       <div class="card-body">
-        <button ng-style="isExpanded && {'margin-left':'550px'} || {'margin-left':'750px'}"  style="
+        <ng-container *ngIf="isExpanded;else normal">
+        <button  style="
         width: 86px;
+        margin-left:550px;
         height: 36px;
         color: white;
         background: #1076BD;
         border-radius: 4px;
-        margin-left:550px;
-        border: white;">Try it out</button>
+        border: white;"><a [attr.href]='accelerator.accUrl' style="color: white;">Try it out</a></button>
+        </ng-container>
+        <ng-template #normal>
+          <button  style="
+          width: 86px;
+          margin-left:750px;
+          height: 36px;
+          color: white;
+          background: #1076BD;
+          border-radius: 4px;
+          border: white;"><a [attr.href]='accelerator.accUrl' style="color: white;">Try it out</a></button>
+        </ng-template>
         <h4 style="font-size: 18px; color:#12355B; font-weight: 700; margin: 3px;" class="card-title">{{accelerator.accName}}</h4>
         <p style="color:#12355B;font-size: 12px;margin-left: 8px;">Added 4 days ago</p> 
         <br>
@@ -53,10 +65,7 @@
         <br>
         <h4 style="font-size: 16px; color:#12355B; font-weight: 700;" class="card-title">How it is useful ?</h4>
         <p class="card-text" >
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          {{accelerator.accHowIt}}</p>
         <br>
         <h4 style="font-size: 16px; color:#12355B; font-weight: 700;" class="card-title">Videos</h4>
         <div style="background-color: #FFFFFF;border-radius: 5px; border:1px solid #66C0FF; width: 90px; height: 50px;">

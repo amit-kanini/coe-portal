@@ -20,13 +20,14 @@ import { ThirdScreenComponent } from './third-screen/third-screen.component';
 import { AcceleratorInterestComponent } from './accelerator-interest/accelerator-interest.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
 import { AcceleratorDetailsComponent } from './accelerator-details/accelerator-details.component';
+import { DashboardMelaDetailsComponent } from './dashboard-mela-details/dashboard-mela-details.component';
 
 
 
 const routes: Routes = [
 
   {path:'login', component : LoginComponent},
-   {path:'', component : SignupComponent},
+   {path:'', component : LoginComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'logout', component : LogoutComponent},
   {path:'hi', component : ThirdScreenComponent},
@@ -42,7 +43,8 @@ const routes: Routes = [
   {path:'rejectuser/:id', component : RejectrequestComponent},
   {path:'acceleratorinterest/:id',component:AcceleratorInterestComponent},
   {path:'main/:urlprm',component:MainscreenComponent},
-  {path:'main/:urlprm/:id',component:MainscreenComponent}
+  {path:'main/:urlprm/:id',component:MainscreenComponent},
+  {path:'main/dashboardDetails/:id',component:DashboardMelaDetailsComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

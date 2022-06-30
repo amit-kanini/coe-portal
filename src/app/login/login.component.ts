@@ -41,6 +41,7 @@ userid:string|null=null;
 
   getid_loginapi(tempEmail:string, tempPass:string ):void
   {
+    console.log('Alla')
     this.loading=false;
     this.obj.loginMethod(tempEmail, tempPass).subscribe(data=>
       {
