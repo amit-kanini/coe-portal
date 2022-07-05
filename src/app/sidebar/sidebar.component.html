@@ -17,7 +17,7 @@
     <br>
     <ng-container *ngIf="dashboards||dashdetail;else normal3">
         <div style="background-color:#1076BD; font-weight: 700;">
-            <a  href="" (click)="$event.preventDefault();"><img style="padding-bottom: 3px;" src="assets/images/Report.png" width="20px" height="22px" id="icon" alt="User Icon" /><span> Dashboards</span></a>
+            <a  (click)="$event.preventDefault();button('dashboards')" href=""><img style="padding-bottom: 3px;" src="assets/images/Report.png" width="20px" height="22px" id="icon" alt="User Icon" /><span> Dashboards</span></a>
         </div>
     </ng-container>
     <ng-template #normal3>

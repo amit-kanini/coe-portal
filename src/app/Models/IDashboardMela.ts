@@ -8,5 +8,11 @@ export interface IDashboardMela
     dashUrl:String,
     dashDoc:String,
     dashImg:String,
-    dashVideo:String
+    dashVideo:String,
+    dashLeadName:String,
+    dashDevName:String,
+    dashDomain:String,
+    dashDetails:String,
+    dashStatus:String
+    
 }

@@ -35,13 +35,12 @@ userid:string|null=null;
     this.userid=localStorage.getItem("userid");
     if(this.userid!=null)
     {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/main/acc']);
     }
   }
 
   getid_loginapi(tempEmail:string, tempPass:string ):void
   {
-    console.log('Alla')
     this.loading=false;
     this.obj.loginMethod(tempEmail, tempPass).subscribe(data=>
       {

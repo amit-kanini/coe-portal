@@ -1,18 +1,18 @@
-
+<div>
 <div class="container">
-    <div *ngFor='let dash of dashboardmela'>
+    <ng-container *ngFor='let dash of dashboardmela'>
     <div class="card" style="width: 19rem;" *ngIf="dash.dashType==dashval;">
-        <div class="card-horizontal">
+        <div class="card-horizontal" >
             <div class="img-square-wrapper">
-                <iframe src="{{dash.dashUrl}}" width="145px" height="176px"></iframe>
-
+                <img src='{{dash.dashImg}}' width="145px" height="176px" alt="Card image cap">
             </div>
             <div class="card-body" style="font-size: 10px;">
                 <h4 class="card-title textlimit" style="font-size: 15px; color: #12355B;line-height: 28px;font-weight: 700;">{{dash.dashName}}</h4>
-                <p class="card-text ">{{dash.dashShortDescr}}</p>
+                <p class="card-text textlimit">{{dash.dashDescr}}</p>
                 <a href="{{dash.dashUrl}}" style="color: #1076BD; font-weight: 400;"><u>View Dashboard</u></a>
             </div>
         </div>
     </div>
+</ng-container>
 </div>
-    </div>
+</div>
